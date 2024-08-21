@@ -1,0 +1,28 @@
+{% extends "guest/base.html.twig" %}
+{% block content %}
+    <h1>Création d'un User</h1>
+
+    {#Formulaire a la main pour deux lignes plutot que de passer par le gabarit Form#}
+
+    <form method="post">
+
+        <div>
+            <label>
+                Email
+                <input type="email" name="email" />
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Mot de passe
+                <input type="password" name="password" />
+            </label>
+        </div>
+
+        <input type="submit" value="Créer"/>
+
+    </form>
+
+
+{% endblock %}

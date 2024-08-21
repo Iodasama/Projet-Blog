@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block metatitle %} {% endblock %}</title>
+{#    <link rel="stylesheet" href="{{asset('styles/appsass.css')}}">#}
+    <link rel="stylesheet" href="{{asset('styles/app.css')}}"> <!-- ne pas mettre le type ici sinon bug-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+    {#        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">#}
+
+</head>
+<body>
+<header class="headerAdmin">
+    <h1 class="adminh1">Admin </h1>
+    {% for message in app.flashes('success') %}
+        <div class="success-message">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('error') %}
+        <div class="error-message">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <nav class="header-nav">
+        <ul>
+            <li><a href="{{ path('admin_articles_list_db') }}">Gérer les articles </a></li>
+            <li><a href="{{ path('admin_categories_list_db') }}">Gérer les catégories </a></li>
+            <li><a href="{{ path('app_logout') }}">Se déconnecter </a></li>
+
+        </ul>
+    </nav>
+</header>
+
+{#<main>#}
+{#    <p>hello</p>#}
+{#</main>#}
+{#<h1 class="adminh1">Admin </h1>#}
+
+{% block content%}
+{% endblock %}
+
+
+
+<footer>
+{#    <img class="footer-image" src="{{asset('images/buildings-city-downtown-1008696_blog_pexel-650x433.jpg')}}" alt="footer-logo">#}
+    <p>&copy; 2024 Admin-LeiJie. All rights reserved.</p>
+    <i class="fa-solid fa-torii-gate"></i>
+</footer>
+<!-- https://imgsrc.cineserie.com/2022/02/fotojet-3.jpg?ver=1 -->
+<script src="{{ asset('Js/main.js') }}"></script>
+</body>
+</html>
+
+

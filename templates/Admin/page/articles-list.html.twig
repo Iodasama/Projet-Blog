@@ -1,0 +1,70 @@
+{% extends "Admin/base.html.twig" %}
+
+{% block metatitle%} Your articles page {% endblock %}
+
+
+{% block content %}
+    {% for message in app.flashes('success') %}
+        <div class="success-message">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <main>
+        <h1>Get Your favorite article  </h1>
+
+        <table class="admin-article-table">
+            <tr>
+                <td>Id</td>
+                <td>Titre</td>
+                <td>Content</td>
+                <td>Description</td>
+                <td>Image</td>
+                <td>Date</td>
+                <td>Est publié ?</td>
+                <td>Modifier article</td>
+                <td>Supprimer article</td>
+                <td>Lien article</td>
+            </tr>
+        {% for article in articles %}
+            <section class="admin-article-table">
+                <tr>
+                    <td><h1 class="poke2">{{ article.id }}</h1></td>
+                    <td><h1 class="poke2">{{ article.title }}</h1></td>
+                    {# dans twig on accede a la propriété title de l'instance de la classe article requete sql#}
+                    <td><h1 class="poke2">{{ article.content}}</h1></td>
+                    <td><h1 class="poke2">{{ article.description }}</h1></td>
+                    <td><img class="admin_image" src="{{asset('images/'~article.image) }}"></td>
+                    <td><h1 class="poke2">{{ article.createdAt |date("Y/m/d") }}</h1></td>
+                    <td> {% if article and article.isPublished %}
+                            <p>Oui</p>
+                        {% else %}
+                            <p>Non</p>
+                        {% endif %}
+                    </td>
+                    <td><a href="{{ path('admin_article_update_formbuilder', {id:article.id}) }}">Update Your Article</a></td>
+                    <td><a href="{{ path('delete_article', {id:article.id}) }}">Suppress Your Article</a></td>
+                    <td><a href="{{ path('article_db_by_id', {id:article.id}) }}">Go get Your Article</a></td>
+                    <td>
+                        <p class="js-admin-article-delete">Suppress</p>
+
+                        <div class="admin-article-popup-delete">
+                            <p>Voulez vous vraiment supprimer ?</p>
+
+                            <a href="{{ path('delete_article', {id: article.id}) }}">Suppress</a>
+                        </div>
+                        <div class= "noDelete"> <p>Ne pas supprimer</p>
+                        </div>
+                    </td>
+                </tr>
+
+            </section>
+        {% endfor %}
+        </table>
+
+
+
+{#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Article</a>#}
+    </main>
+
+
+{% endblock %}

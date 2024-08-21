@@ -1,0 +1,50 @@
+{% extends "Admin/base.html.twig" %}
+
+{% block metatitle%} Your Categories page {% endblock %}
+
+
+{% block content %}
+    {% for message in app.flashes('success') %}
+        <div class="success-message">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <main>
+        <h1>Get Your favorite category  </h1>
+
+        <table class="admin-article-table">
+            <tr>
+                <td>Id</td>
+                <td>Titre</td>
+                <td>Color</td>
+                <td>Date</td>
+                <td>Supprimer category</td>
+                <td>Image</td>
+                <td>Lien catégorie</td>
+
+
+
+            </tr>
+            {% for category in categories %}
+                <section class="admin-article-table">
+                    <tr>
+                        <td><h1 class="poke2">{{ category.id }}</h1></td>
+                        <td><h1 class="poke2">{{ category.title }}</h1></td>
+                        {# dans twig on accede a la propriété title de l'instance de la classe article requete sql#}
+                        <td><h1 class="poke2">{{ category.color}}</h1></td>
+                        <td><h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1></td>
+                        <td><a href="{{ path('delete_category', {id:category.id}) }}">Suppress Your Category</a></td>
+                        <td><p class=""><img class="admin_image" src="{{ category.image }}"></p></td>
+                        <td><a href="{{ path('category_db_by_id', {id:category.id}) }}">Go get Your Category</a></td>
+                    </tr>
+                </section>
+            {% endfor %}
+        </table>
+
+
+
+        {#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Article</a>#}
+    </main>
+
+
+{% endblock %}

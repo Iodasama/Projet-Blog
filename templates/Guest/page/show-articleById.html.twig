@@ -1,0 +1,25 @@
+{% extends "Guest/base.html.twig" %}
+
+{% block metatitle%} Get your article {% endblock %}
+
+{% block content %}
+    <!--symfony configure pour que cela parte directement depuis Templates donc  Page donc pas besoin de mettre templates pour le chemin meme si on cree le dossier Partial pour mettre sa base il faudra ecrire 'Partial/articles.html.twig' sans indiquer  templates {Pourcent extends "Page/base.html.twig" Pourcent} -->
+    <main>
+        <h1>Your Article</h1>
+
+        {% if article and article.isPublished %}
+            <h1 class="poke">Your favorite article here:</h1>
+            <h1 class="poke2">{{ article.title }}</h1>
+            <p class="poke2"><img src="{{ article.image }}"></p>
+            <h1 class="poke2">{{ article.content }}</h1>
+            <h1 class="poke2">{{ article.description }}</h1>
+
+
+{#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Artcile</a>#}
+        {% else %}
+            <p class="poke">Your favorite article doesn't exist</p>
+
+        {% endif %}
+
+    </main>
+{% endblock %}
