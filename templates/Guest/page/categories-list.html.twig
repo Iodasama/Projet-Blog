@@ -1,0 +1,25 @@
+{% extends "Guest/base.html.twig" %}
+
+{% block metatitle%} Your articles page{% endblock %}
+
+{% block content %}
+    <main>
+        <h1 class="poke">Your favorite Category is here</h1>
+        <section class="list-articles">
+        {% for category in categories %}
+            <h1 class="poke2" style="background-color: {{ category.color }}">{{ category.title }}</h1>
+{#            <div class="test"><img src="{{asset('images/buildings-city-downtown-1008696_blog_pexel-650x433.jpg ' )}}" alt=""> </div>#}
+            
+{#            <h1 class="poke2">{{ article.content}}</h1>#}
+{#            <h1 class="poke2">{{ article.description }}</h1>#}
+{#            <a href="{{ path('category_db_by_id', {id:catgory.id}) }}">Go get Your Category </a>#}
+            <p class="poke2"><img src="{{ category.image }}"></p>
+
+{#            <h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1>#}
+
+            <a href="{{ path('articles_list_db') }}">See Your Articles</a>
+            <a href="{{ path('category_db_by_id', {id:category.id}) }}">See Category</a>
+        {% endfor %}
+        </section>
+    </main>
+{% endblock %}
