@@ -17,9 +17,10 @@
 
 {#            <h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1>#}
 
-            <a href="{{ path('articles_list_db') }}">See Your Articles</a>
+
             <a href="{{ path('category_db_by_id', {id:category.id}) }}">See Category</a>
         {% endfor %}
+            <a href="{{ path('articles_list_db') }}">See Your Articles</a>
         </section>
     </main>
 {% endblock %}

@@ -1,5 +1,7 @@
 {% extends "guest/base.html.twig" %}
 {% block content %}
+
+
     <h1>Create Review</h1>
 
     <form action="" method="post" class="form-examples">
@@ -38,7 +40,10 @@
 
     </form>
 
-
+    {% for review in reviews %}
+       <p>{{ review.title }} </p>
+        <p>{{ review.content }}</p>
+    {% endfor %}
 
 
 
