@@ -33,7 +33,8 @@
                     {# dans twig on accede a la propriété title de l'instance de la classe article requete sql#}
                     <td><h1 class="poke2">{{ article.content}}</h1></td>
                     <td><h1 class="poke2">{{ article.description }}</h1></td>
-                    <td><img class="admin_image" src="{{asset('images/'~article.image) }}"></td>
+{#                    <td><img class="admin_image" src="{{ article.image }}"></td>#}
+                    <td><img class="admin_image" src="{{ asset('images/'~article.image) }}"></td>
                     <td><h1 class="poke2">{{ article.createdAt |date("Y/m/d") }}</h1></td>
                     <td> {% if article and article.isPublished %}
                             <p>Oui</p>

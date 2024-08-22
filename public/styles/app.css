@@ -92,12 +92,42 @@ img {
   /*align-items: center;*/
   /*text-decoration: white;*/
 }
+.ul-user {
+  color: white;
+  list-style: none;
 
-ul li a {
-  color:white;
-  text-decoration: white;
-
+  display: flex;
+  padding: 0;
 }
+
+.ul-user li a {
+  padding: 0 1rem;
+}
+
+
+.ul-user li:not(:last-child) a {
+  border-right: 1px solid red;
+}
+
+
+
+.ul-user { background-color: white;
+  list-style: none;
+  display:flex;
+  justify-content: end;
+  padding: 1.5rem 0;
+}
+
+.ul-user li a {
+  color:red;
+  text-decoration: red;
+}
+
+ul li p {
+  color:red;
+  text-decoration: red;
+}
+
 ul {
   list-style: none;
   display:flex;

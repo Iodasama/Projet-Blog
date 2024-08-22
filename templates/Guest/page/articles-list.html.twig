@@ -8,17 +8,27 @@
         {% for article in articles %}
 {#            {% if article.isPublished %}#}
                 <h1 class="poke">Your favorite Article is here</h1>
-                <article class="article" style="border: 3px solid {{ article.category ? article.category.color : "black" }}">
+                <article class="article" >
                     <h1 class="poke2">{{ article.title }}</h1>
                     <h2 class="poke2">{{ article.content}}</h2>
                     <h3 class="poke2">{{ article.description }}</h3>
                     <a href="{{ path('article_db_by_id', {id:article.id}) }}">Go get Your Article</a>
-                    <p class="poke2"><img src="{{ article.image }}"></p>
+{#                    <p class="poke2"><img src="{{ article.image }}"></p>#}
+                    <img class="admin_image" src="{{ asset('images/'~article.image) }}">
 
                     <h1 class="poke2">{{ article.createdAt |date("Y/m/d") }}</h1>
                 </article>
 {#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Article</a>#}
 {#            {% endif %}#}
         {% endfor %}
+
+        <p id="test">ACCUEIL</p>
+        <p id="test1">Qui suis-je?</p>
+        <p id="test2">Livres</p>
+        <p id="test3">Photos</p>
+        <p id="test4">Contact</p>
     </main>
 {% endblock %}
+
+
+{#style="border: 3px solid {{ article.category ? article.category.color : "black" }}"#}

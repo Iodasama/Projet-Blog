@@ -15,19 +15,23 @@ class SecurityController extends AbstractController
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils, EntityManagerInterface $entityManager): Response
     {
+        $currentUser=$this->getUser();
 
        if( $this->isGranted('ROLE_ADMIN')) {
             return $this->redirectToRoute('admin_articles_list_db');
        } // si tu as le role ADMIN  alors redirection vers admin_articles_list_db
         //si tu as le role USER alors redirection vers 'path'
 
-       if ($this->isGranted('ROLE_USER')) {
-           $currentUser=$this->getUser();
+       if ($currentUser !==null && $this->isGranted('ROLE_USER')) {
+
 //           dd($currentUser);
 //           $user= $entityManager->getRepository(User::class)->findOneBy(['id'=>$currentUser->getId()]);
 //           dd($user); soit cette methode soit celle du getId ci dessous
-           $id= $currentUser->getId();
-           return $this->redirectToRoute('users_insert_review',['id'=>$id]);
+//           $id= $currentUser->getId();
+           return $this->redirectToRoute('users_insert_review');
+
+//           return $this->redirectToRoute('users_insert_review',['id'=>$id]); si on souhaite mettre un id mais faille dans la sécurité du coup n importe quel user une fois connecté
+
            //si tu as le role USER alors redirection vers 'path'
        }
 

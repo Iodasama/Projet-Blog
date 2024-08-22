@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class AdminCategoriesController extends AbstractController
 {
 
-    #[Route('/Admin/categories-list-db', name: 'admin_categories_list_db')]
+    #[Route('/admin/categories-list-db', name: 'admin_categories_list_db')]
     //Je cree la route, je lui passe le nom de admin_articles_list_db
     public function adminListCategoriesFromDb(categoryRepository $categoryRepository): Response //Response pour le typage
     {
@@ -30,7 +30,7 @@ class AdminCategoriesController extends AbstractController
         //la variable categories contient la variable $categories
     }
 
-    #[Route('/Admin/delete_category/{id}', name: 'delete_category')]
+    #[Route('/admin/delete_category/{id}', name: 'delete_category')]
     public function deleteCategory(int $id, categoryRepository $categoryRepository, EntityManagerInterface $entityManager): Response
     {
         $category = $categoryRepository->find($id);
@@ -47,10 +47,10 @@ class AdminCategoriesController extends AbstractController
         } catch (\Exception $exception) {
             return $this->renderView('Admin/page/errormessage.html.twig', ['errorMessage' => $exception->getMessage()]);
         }
-        return $this->redirectToRoute('admin_categories_list_db'); //bien mettre le name du path ici admin_articles_list_db non pas
+        return $this->redirectToRoute('admin_categories_list_db'); //bien mettre le name du path ici admin_articles_list_db non pas la route
     }
 
-    #[Route('/Admin-insert-category-formbuilder', name: 'Admin_category_insert_formbuilder')]
+    #[Route('/admin/Admin-insert-category-formbuilder', name: 'Admin_category_insert_formbuilder')]
     public function insertCategories(EntityManagerInterface $entityManager, Request $request): Response
     {
         $category = new Category();
@@ -71,7 +71,7 @@ class AdminCategoriesController extends AbstractController
     }
 
 
-    #[Route('/Admin-update-category-formbuilder/{id}', name: 'Admin_category_update_formbuilder')]
+    #[Route('/admin/Admin-update-category-formbuilder/{id}', name: 'Admin_category_update_formbuilder')]
     public function updateCategories(int $id, EntityManagerInterface $entityManager, Request $request, CategoryRepository $categoryRepository): Response
     {
         $category = $categoryRepository->find($id);

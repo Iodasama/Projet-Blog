@@ -1,4 +1,4 @@
-{% extends "guest/base.html.twig" %}
+{% extends "admin/base.html.twig" %}
 {% block content %}
 
 
@@ -43,9 +43,10 @@
     {% for review in reviews %}
        <p>{{ review.title }} </p>
         <p>{{ review.content }}</p>
+        <a href="{{ path('delete_review', {id: review.id}) }}">Suppress Review</a>
     {% endfor %}
 
-    <a href="home">Accueil</a>
+
 
 
 {% endblock %}

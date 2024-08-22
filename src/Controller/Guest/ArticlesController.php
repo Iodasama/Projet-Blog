@@ -20,7 +20,7 @@ class ArticlesController extends AbstractController
     #[Route('/articles-list-db', name: 'articles_list_db')]
     public function listArticlesFromDb(ArticleRepository $articleRepository): Response
     {
-        $articles = $articleRepository->findAll();
+        $articles = $articleRepository->findArticlesHome();
 
         return $this->render('Guest/page/articles-list.html.twig', ['articles' => $articles]);
     }

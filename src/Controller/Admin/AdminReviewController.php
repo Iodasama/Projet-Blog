@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1); // pour etre sur de l'affichage permet de reperer les erreurs par ex du string alors qu on attend un integer, comme c est permissif cela permet d etre sur que tout est bien typé, que la valeur de retour est bien celle qu on attend
-namespace App\Controller\Guest;
+namespace App\Controller\Admin;
 
 use App\Entity\Review;
 use App\Repository\BookRepository;
@@ -14,18 +14,17 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 
-class ReviewController extends AbstractController //commentaire test commit
+class AdminReviewController extends AbstractController //commentaire test commit
 {
-    #[Route('/users/insert-review', 'users_insert_review')] // je cree ma route
-    public function insertReview( Request $request, EntityManagerInterface $entityManager, BookRepository $bookRepository,ReviewRepository $reviewRepository): Response
-      {
+    #[Route('/admin/insert-review', 'admin_insert_review')] // je cree ma route
+    public function insertReview(Request $request, EntityManagerInterface $entityManager, BookRepository $bookRepository, ReviewRepository $reviewRepository): Response
+    {
 //          int $id,
 //        $user = $userRepository->find($id);
 
         $books = $bookRepository->findAll();
 
         $reviews = $reviewRepository->findAll();
-
 
 
         if ($request->getMethod() === "POST") {
@@ -62,22 +61,29 @@ class ReviewController extends AbstractController //commentaire test commit
             }
         }
 
-        return $this->render('Guest/page/user/insert-review.html.twig', [ 'books' => $books,'reviews' => $reviews]); // je retourne le formulaire
+        return $this->render('Admin/page/user/insert-review.html.twig', ['books' => $books, 'reviews' => $reviews]); // je retourne le formulaire
     }
 
-//    #[Route('/users/insert-review/{id}', name: 'users_insert_review')]
-//    //Je cree la route, je lui passe le nom de admin_articles_list_db
-//    public function showReviews(ReviewRepository $reviewRepository): Response //Response pour le typage
-//    {
-//        $reviews = $reviewRepository->findAll(); //dans ma table Article je fais ma demande Select/ArticleRepo methode findAll, Doctrine bosse avec l'Entité->pour la requete SQl $articles = $articleRepository->findAll() Doctrine crée une instance de l'Entité (Article ici) par enregistrement (12 articles 12 enregistrements), je lui mets les valeurs que je veux (propriétés title, color?)je lui passe et Doctrine fait le reste du travail.
-//        // La classe repository est un design pattern
-//        //Les requetes Select sont mises dans Repository
-//        //Je type la classe ArticleRepository et je crée une instance $articleRepository des lors je peux utliser ses methodes
-//        //Je place en parametres ArticleRepository et $articleRepository
-//        return $this->render('Guest/page/user/insert-review.html.twig', ['reviews' => $reviews]);
-//        //je retourne une réponse fichier twig code 200, une page qui contient mes articles
-//        //la variable articles contient la variable $articles
-//    }
-//
+    #[Route('/admin/delete-review/{id}', name: 'delete_review')]
+    public function deleteReview(int $id, ReviewRepository $reviewRepository, EntityManagerInterface $entityManager): Response
+    {
+        $review = $reviewRepository->find($id);
+//         dd($review);
+
+        if (!$review) {
+            $html404 = $this->renderView('Admin/page/404.html.twig');
+            return new Response($html404, 404);
+        }
+
+        try {
+            $entityManager->remove($review); //preparation : preparer la requete Sql de suppression
+            $entityManager->flush(); // execute : executer la requete préparée
+            $this->addFlash('success', 'Review deleted sccessfully');
+        } catch (\Exception $exception) {
+            return $this->renderView('Admin/page/errormessage.html.twig', ['errorMessage' => $exception->getMessage()]);
+        }
+        return $this->redirectToRoute('admin_insert_review'); //bien mettre le name du path ici admin_articles_list_db non pas
+    }
+
 
 }

@@ -26,10 +26,14 @@
         </div>
     {% endfor %}
 
-    <nav class="header-nav">
+    <nav class="header-nav-user">
         <ul>
             <li><a href="{{ path('admin_articles_list_db') }}">Gérer les articles </a></li>
             <li><a href="{{ path('admin_categories_list_db') }}">Gérer les catégories </a></li>
+            <li><a href="{{ path('admin_article_insert_formbuilder') }}">Insérer un article </a></li>
+            <li><a href="{{ path('Admin_category_insert_formbuilder') }}">Insérer une catégorie </a></li>
+            <li><a href="{{ path('admin_insert_review') }}">Gérer les Reviews </a></li>
+
             <li><a href="{{ path('app_logout') }}">Se déconnecter </a></li>
 
         </ul>

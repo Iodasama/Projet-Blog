@@ -19,7 +19,7 @@ class ArticleType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('description')
-            ->add('image')
+//            ->add('image') //si je souhaite image par url
             ->add('image', FileType::class, [
                 // demande à symfony de ne pas gérer automatiquement le champs image, je prends la main
                 'mapped' => false,

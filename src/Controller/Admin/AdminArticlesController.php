@@ -23,7 +23,7 @@ class AdminArticlesController extends AbstractController
     //Je cree la route, je lui passe le nom de admin_articles_list_db
     public function adminListArticlesFromDb(ArticleRepository $articleRepository): Response //Response pour le typage
     {
-        $articles = $articleRepository->findAll(); //dans ma table Article je fais ma demande Select/ArticleRepo methode findAll, Doctrine bosse avec l'Entité->pour la requete SQl $articles = $articleRepository->findAll() Doctrine crée une instance de l'Entité (Article ici) par enregistrement (12 articles 12 enregistrements), je lui mets les valeurs que je veux (propriétés title, color?)je lui passe et Doctrine fait le reste du travail.
+        $articles = $articleRepository->findArticlesHome(); //dans ma table Article je fais ma demande Select/ArticleRepo methode findAll, Doctrine bosse avec l'Entité->pour la requete SQl $articles = $articleRepository->findAll() Doctrine crée une instance de l'Entité (Article ici) par enregistrement (12 articles 12 enregistrements), je lui mets les valeurs que je veux (propriétés title, color?)je lui passe et Doctrine fait le reste du travail.
         // La classe repository est un design pattern
         //Les requetes Select sont mises dans Repository
         //Je type la classe ArticleRepository et je crée une instance $articleRepository des lors je peux utliser ses methodes
@@ -107,7 +107,6 @@ class AdminArticlesController extends AbstractController
 
     }
 
-
     #[Route('/admin/update-formbuilder/{id}', name: 'admin_article_update_formbuilder')]
     public function updateArticles(int $id, EntityManagerInterface $entityManager, Request $request, ArticleRepository $articleRepository): Response
     {
@@ -118,18 +117,74 @@ class AdminArticlesController extends AbstractController
 
         $articleCreateForm->handleRequest($request);
         if ($articleCreateForm->isSubmitted() && $articleCreateForm->isValid()) {
-            $article->setUpdatedAt(new \DateTime('NOW')); // pour avoir la date de l'update lors d'un updatej
+            $article->setUpdatedAt(new \DateTime('NOW'));
             $entityManager->persist($article);
             $entityManager->flush(); //execution de la requete sql
             $this->addFlash('success', 'Article updated successfully');
         }
 
 
-        return $this->render('Admin/page/update-articles.html.twig', ['articleForm' => $articleCreateFormView]);
+        return $this->render('admin/page/update-articles.html.twig', ['articleForm' => $articleCreateFormView]);
 
 
     }
+
+
+//    #[Route('/admin/update-formbuilder/{id}', name: 'admin_article_update_formbuilder')]
+//    public function updateArticles(int $id, EntityManagerInterface $entityManager, Request $request, ArticleRepository $articleRepository, SluggerInterface $slugger, ParameterBagInterface $params): Response
+//    {
+//        $article = $articleRepository->find($id);
+//
+//        $articleCreateForm = $this->createForm(ArticleType::class, $article);
+//        $articleCreateFormView = $articleCreateForm->createView();
+//
+//        $articleCreateForm->handleRequest($request);
+//
+//        if ($articleCreateForm->isSubmitted() && $articleCreateForm->isValid()) {
+//
+//            $imagefiles = $articleCreateForm->get('image')->getData();
+//
+//            if ($imagefiles)
+//            {
+//                $originalFilename = pathinfo($imagefiles->getClientOriginalName(), PATHINFO_FILENAME);
+//                $safeFilename = $slugger->slug($originalFilename);
+//                $newFilename = $safeFilename.'-'.uniqid().'.'.$imagefiles->guessExtension();
+//                try
+//                {
+//                    $rootPath = $params->get('kernel.project_dir');
+//                    $imagefiles->move( $rootPath.'/public/images', $newFilename);
+//                } catch (FileException $exception)
+//                {
+//                    dd($exception->getMessage());
+//                }
+//                $article->setImage($newFilename);
+//            }
+//            $article->setUpdatedAt(new \DateTime('NOW')); // pour avoir la date de l'update lors d'un updatej
+//            $entityManager->persist($article);
+//            $entityManager->flush(); //execution de la requete sql
+//            $this->addFlash('success', 'Article updated successfully');
+//        }
+//
+//
+//        return $this->render('Admin/page/update-articles.html.twig', ['articleForm' => $articleCreateFormView]);
+//
+//
+//    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //    #[Route('/admin/show-articles/{id}', name: 'admin_article_db_by_id')]
 //    public function adminShowArticleById(int $id, ArticleRepository $articleRepository): Response
 //    {
