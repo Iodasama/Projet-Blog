@@ -20,6 +20,16 @@ class ArticleRepository extends ServiceEntityRepository
 //    /**
 //     * @return Article[] Returns an array of Article objects
 //     */
+    public function findArticlesHome(): array
+    {
+        return $this->createQueryBuilder('a')
+
+            ->orderBy('a.createdAt', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
 
 //    Guest function findOneBySomeField($value): ?Article
