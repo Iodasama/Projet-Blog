@@ -38,8 +38,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height:60vh;
-  /*overflow:hidden;*/
-  /*position: relative;*/
 
 
 }
@@ -71,16 +69,6 @@ button {
   right: 400px;
 }
 
-/*.image{*/
-
-/*  position:absolute;*/
-/*  transition: transform 1s ease;*/
-/*  z-index:1000;*/
-/*}*/
-
-
-
-
 
 
 .headerGuest {
@@ -93,13 +81,7 @@ button {
   height:130vh;
 
 }
-/*.img_admin_header{*/
-/*    !*position:absolute;*!*/
-/*    width: 100%;*/
-/*}*/
-/*.header_admin {*/
-/*    width:75%;*/
-/*}*/
+
 .img_header {
   /*position:relative;*/
   width: 100%;
@@ -147,12 +129,12 @@ img {
 
 
 
-.header-nav {
-  /*display: flex;*/
-  /*justify-content: space-evenly;*/
-  /*align-items: center;*/
-  /*text-decoration: white;*/
-}
+/*.header-nav {*/
+/*  !*display: flex;*!*/
+/*  !*justify-content: space-evenly;*!*/
+/*  !*align-items: center;*!*/
+/*  !*text-decoration: white;*!*/
+/*}*/
 
 ul li a {
   color:white;
@@ -306,6 +288,7 @@ label {
   padding-top: 50px;
   margin-left:20px;
   margin-right:20px;
+  text-align: justify;
 
 }
 .text2 { display:flex;
@@ -314,7 +297,7 @@ label {
   padding-bottom: 30px;
   margin-left:20px;
   margin-right:20px;
-
+  text-align: justify;
 }
 
 .text3 { display:flex;
@@ -323,7 +306,8 @@ label {
   padding-bottom: 10px;
   margin-left:20px;
   margin-right:20px;
-  text-justify: auto;
+  text-align: justify;
+
 }
 .text4 {
   display:flex;
@@ -331,8 +315,8 @@ label {
   align-items: center;
   padding-bottom: 10px;
   margin-left:20px;
-  margin-right:5px;
-  text-justify: auto;
+  margin-right:20px;
+  text-align: justify;
 }
 /*css pour Trait du A propos*/
 #test{
