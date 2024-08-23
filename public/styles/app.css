@@ -7,7 +7,13 @@
 .green {
   color: #1077b5;
 }
-i:hover{ color:red}
+i:hover{
+  color:red
+}
+
+i{
+  transition: all 0.5s linear;
+}
 
 
 
