@@ -2,7 +2,12 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
 }
+
+
+/* on peut mettre aussi  src:url("../Font/pokemonFont/Pokemon Hollow.ttf") format('truetype')*/
+
 
 .green {
   color: #1077b5;
@@ -33,8 +38,50 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height:60vh;
+  /*overflow:hidden;*/
+  /*position: relative;*/
+
 
 }
+
+.book {
+  overflow:hidden;
+  height: 70%;
+  width: 100%;
+  position: relative;
+
+
+}
+
+.image {
+  top:600px;
+  right: 400px;
+  position: absolute;
+  background-color: #5B21B6;
+  width:200px;
+  transform: translateY(140%);/*** DESCENTE ***/
+  transition: transform 1s ease;
+
+}
+button:hover + .image { transform: translateY(-250px) ;}
+
+button {
+  position:absolute;
+  top:600px;
+  right: 400px;
+}
+
+/*.image{*/
+
+/*  position:absolute;*/
+/*  transition: transform 1s ease;*/
+/*  z-index:1000;*/
+/*}*/
+
+
+
+
+
 
 .headerGuest {
 
@@ -256,14 +303,44 @@ label {
 .text1 { display:flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 50px;
+  margin-left:20px;
+  margin-right:20px;
+
 }
 .text2 { display:flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 30px;
+  margin-left:20px;
+  margin-right:20px;
+
 }
+
+.text3 { display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-left:20px;
+  margin-right:20px;
+  text-justify: auto;
+}
+.text4 {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-left:20px;
+  margin-right:5px;
+  text-justify: auto;
+}
+/*css pour Trait du A propos*/
 #test{
   position: relative;
+  padding-bottom: 10px;
 }
+/*css pour Trait du A propos*/
+
 #test::after{
   content:"";
   left:50%;
@@ -275,6 +352,10 @@ label {
   position: absolute;
 }
 
+section {
+  width: 1000px;
+ margin:auto;
+}
 
 /*}*/
 

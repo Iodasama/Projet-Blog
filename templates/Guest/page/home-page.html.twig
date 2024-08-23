@@ -18,18 +18,21 @@
                 <p>Car comme le dit si bien Bernard Werber:</p>
             </div>
             <div class="text2">
-                <p>«L’important n’est pas de convaincre, mais de donner à réfléchir» </p>
+                <p>«L’important n’est pas de convaincre, mais de donner à réfléchir.» </p>
             </div>
             <div class="text3">
                 <p>Mes écrits, articles ou essais, parlent de la Chine, du peuple chinois, de la culture chinoise, et, à travers ce prisme, proposent un regard différent sur le monde : un coup de projecteur, une analyse instantanée mettant en relief les grands ensembles macro économiques et financiers et leurs incidences sur les peuples et les Nations.</p>
-            <div>
+            </div>
                 <div class="text4">
-                        <p>Mais cet arrêt sur image n’est jamais figé. Le lecteur peut sentir le mouvement sous le flot des mots. Une manière de toucher, de sentir, d’appréhender les volumes en perpétuelle évolution.</p>
-                        <p>J’ai souhaité, de la meilleure façon possible, offrir une grille de lecture permettant de mieux déchiffrer une actualité chinoise très largement reliée mais toujours très difficile à comprendre.</p </div>
-            <p id="test1">Qui suis-je?</p>
-            <p id="test2">Livres</p>
-        </section>
+                    <p>Mais cet arrêt sur image n’est jamais figé. Le lecteur peut sentir le mouvement sous le flot des mots. Une manière de toucher, de sentir, d’appréhender les volumes en perpétuelle évolution. J’ai souhaité, de la meilleure façon possible, offrir une grille de lecture permettant de mieux déchiffrer une actualité chinoise très largement reliée mais toujours très difficile à comprendre.</p>
+                </div>
 
+
+        </section>
+        <div class="section2">
+                <p id="test1">Qui suis-je?</p>
+                <p id="test2">Livres</p>
+        </div>
         <section class="list-articles">
             <h1 class="poke">Your favorite Category is here</h1>
             {% for category in categories %}
@@ -48,10 +51,13 @@
             {% endfor %}
             <a href="{{ path('articles_list_db') }}">See Your Articles</a>
         </section>
-        <section>
-                <p id="test3">Photos</p>
-                <p id="test4">Contact</p>
+
+        <section class="section3">
+            <p id="test3">Photos</p>
+            <p id="test4">Contact</p>
         </section>
+
 </main>
+
 </body>
 {% endblock %}

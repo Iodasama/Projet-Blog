@@ -11,6 +11,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
 
     {#    <link rel="stylesheet" href="{{asset('styles/appsass.css')}}">#}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -27,6 +31,9 @@
 </head>
 <body>
 <header class="headerAdmin">
+    <div class="image">
+        <img src="{{ asset('images/la-chine-aux-rayons-x-couve-250x353.png') }}" alt="book-img">
+    </div>
     <h1 class="adminh1">Admin </h1>
     {% for message in app.flashes('success') %}
         <div class="success-message">
