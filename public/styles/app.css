@@ -4,8 +4,15 @@
   box-sizing: border-box;
 }
 
+.green {
+  color: #1077b5;
+}
+i:hover{ color:red}
+
+
+
 body {
-  background-color: #96d9f4;
+  background-color: #fdfde5;
 }
 .list-articles {
   margin: 30px;
@@ -44,13 +51,12 @@ body {
   width: 100%;
 }
 .admin-article-table {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*align-items: center;*/
 }
 
 .admin_image{
-
   width:50px;
 }
 
@@ -81,7 +87,8 @@ img {
 }
 
 .poke2{
-  width:50%
+  /*width:30%*/
+
 }
 
 
@@ -92,6 +99,20 @@ img {
   /*align-items: center;*/
   /*text-decoration: white;*/
 }
+
+ul li a {
+  color:white;
+  text-decoration: white;
+
+}
+ul {
+  list-style: none;
+  display:flex;
+  justify-content: space-evenly;
+}
+
+a:hover{ color:red}
+
 .ul-user {
   color: white;
   list-style: none;
