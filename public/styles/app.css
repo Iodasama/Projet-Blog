@@ -52,23 +52,55 @@ body {
 }
 
 .image {
-  top:600px;
+  top:380px;
   right: 400px;
   position: absolute;
   background-color: #5B21B6;
-  width:200px;
-  transform: translateY(140%);/*** DESCENTE ***/
+  width:190px;
+  transform: translateX(350%);/*** DESCENTE SI Y - DROITE SI X  ***/
   transition: transform 1s ease;
 
 }
-button:hover + .image { transform: translateY(-250px) ;}
 
-button {
-  position:absolute;
-  top:600px;
-  right: 400px;
+button:hover + .image, .image:hover {
+  transform: translateX(-20px) ;
+
 }
 
+.button {
+  position:absolute;
+  top:550px;
+  right: 575px;
+  border-radius: 10px;
+  width:8%;
+  height: 65px;
+  padding:10px;
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.65);
+  font-weight: lighter;
+  font-size: large;
+  animation: glissement 3s infinite;
+  animation-direction: alternate;
+  transition: .5s;
+}
+
+.button:hover{
+  background-color: transparent;
+  color:transparent;
+}
+
+@keyframes glissement {
+  from {
+    margin-left: 60%;
+    width: 60%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 10%;
+  }
+}
 
 
 .headerGuest {
@@ -86,11 +118,11 @@ button {
   /*position:relative;*/
   width: 100%;
 }
-.admin-article-table {
+.admin-article-table {}
   /*display: flex;*/
   /*flex-direction: row;*/
   /*align-items: center;*/
-}
+
 
 .admin_image{
   width:50px;
@@ -211,22 +243,27 @@ a:hover{ color:red}
   text-align: center;
 }
 
-.footer-image{
-  background-size: contain;
-  /*contain pour prendre plus de place*/
-  background-repeat: no-repeat;
-  /*height:100vh;*/
-  width:100%;
-  height: 100vh;
+/*.footer-image{*/
+/*  background-size: contain;*/
+/*  !*contain pour prendre plus de place*!*/
+/*  background-repeat: no-repeat;*/
+/*  !*height:100vh;*!*/
+/* */
+/*}*/
+
+.footer-image {
+
 }
+
 footer {
 
   background-image: url('../../public/images/buildings-city-downtown-1008696_blog_pexel-650x433.jpg');
-  background-size: contain;
+
   /*contain pour prendre plus de place*/
+  width:100%;
+  height: 120vh;
+  background-size: contain;
   background-repeat: no-repeat;
-  /*height:100vh;*/
-  height:121.405vh;
   display:flex;
   flex-direction: column;
   justify-content: end;
