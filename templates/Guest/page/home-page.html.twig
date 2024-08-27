@@ -37,10 +37,10 @@
 {#                    </div>#}
 
 {#                   {#<h1 class="poke2" style="">{{ category.title }}</h1>#}
-                    <a href="{{ path('category_db_by_id', {id:category.id}) }}"><i class="fa-solid fa-door-open"></i></a>
+
                     <div class="pic-title">
                         <div class="poke2"><img src="{{ asset('images/'~category.image) }}" alt="pic_categpry"></div>
-                        <h1 class="poke3" style="">{{ category.title }}</h1>
+                        <a href="{{ path('category_db_by_id', {id:category.id}) }}"><h1 class="poke3" style="">{{ category.title }}</h1></a>
                     </div>
 
                 </article>
