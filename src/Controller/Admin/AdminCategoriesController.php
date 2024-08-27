@@ -9,9 +9,12 @@ use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AdminCategoriesController extends AbstractController
 {
@@ -72,24 +75,56 @@ class AdminCategoriesController extends AbstractController
 
 
     #[Route('/admin/Admin-update-category-formbuilder/{id}', name: 'Admin_category_update_formbuilder')]
-    public function updateCategories(int $id, EntityManagerInterface $entityManager, Request $request, CategoryRepository $categoryRepository): Response
+    public function updateCategories(int $id, EntityManagerInterface $entityManager, Request $request, CategoryRepository $categoryRepository, SluggerInterface $slugger, ParameterBagInterface $params): Response
     {
         $category = $categoryRepository->find($id);
 
-        $categoryCreateForm = $this->createForm(CategoryType::class,$category);
+        $categoryCreateForm = $this->createForm(CategoryType::class, $category);
         $categoryCreateFormView = $categoryCreateForm->createView();
 
         $categoryCreateForm->handleRequest($request);
-        if ($categoryCreateForm->isSubmitted() && $categoryCreateForm->isValid()) {
 
-            $entityManager->persist($category);
-            $entityManager->flush(); //execution de la requete sql
+        if ($categoryCreateForm->isSubmitted() && $categoryCreateForm->isValid()) {
+            $imageFile = $categoryCreateForm->get('image')->getData();
+            if ($imageFile) {
+                // je récupère le nom du fichier (ici mes images ont des noms de fichiers avec des lettres, tirets du 6,  et chiffres et extensions en .jpg)
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+
+                // le slug je nettoie le nom en sortant tous les caractères spéciaux etc
+                // je type la classe SluggerInterface  et je crée une instance $slugger des lors je peux utliser ses methodes
+                //Je place en parametres SluggerInterface et $slugger
+                $safeFilename = $slugger->slug($originalFilename);
+
+                // je rajoute un identifiant unique au nom (que l'on pourra verifier en bdd une fois inseré apres le flush)
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+
+                try {
+                    // je récupère le chemin de la racine du projet
+                    $rootPath = $params->get('kernel.project_dir');
+                    // je déplace le fichier dans le dossier /public/images en partant de la racine
+                    // du projet, et je renomme le fichier avec le nouveau nom (slugifié et identifiant unique)
+                    $imageFile->move($rootPath . '/public/images', $newFilename);
+                } catch (FileException $e) {
+                    dd($e->getMessage());
+
+                    //  Le code où le programmeur pense qu'une exception peut se produire est placé dans le trybloc. Cela ne signifie pas qu'une exception se produira ici. Cela signifie que cela pourrait se produire ici, et que le programmeur est conscient de cette possibilité. Le type d'erreur que l on attend est placé dans le catchbloc. Celui-ci contient également tout le code qui doit être exécuté si une exception se produit.
+                    //si l exception se produit on aura un message du style : Some error message
+                }
+
+                // je stocke dans la propriété image de l'entité article le nom du fichier
+                $category->setImage($newFilename);
+
+            }
+            $category->setUpdatedAt(new \DateTime('NOW'));
+            $entityManager->persist($category); // preparation de la requete
+            $entityManager->flush(); // execution
             $this->addFlash('success', 'Category updated successfully');
+
         }
 
 
         return $this->render('Admin/page/update-categories.html.twig', ['categoryForm' => $categoryCreateFormView]);
 
-
     }
+
 }

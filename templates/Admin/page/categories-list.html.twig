@@ -16,7 +16,7 @@
             <tr>
                 <td>Id</td>
                 <td>Titre</td>
-                <td>Color</td>
+{#                <td>Color</td>#}
                 <td>Date</td>
                 <td>Supprimer category</td>
                 <td>Image</td>
@@ -31,10 +31,10 @@
                         <td><h1 class="poke2">{{ category.id }}</h1></td>
                         <td><h1 class="poke2">{{ category.title }}</h1></td>
                         {# dans twig on accede a la propriété title de l'instance de la classe article requete sql#}
-                        <td><h1 class="poke2">{{ category.color}}</h1></td>
+{#                        <td><h1 class="poke2">{{ category.color}}</h1></td>#}
                         <td><h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1></td>
                         <td><a href="{{ path('delete_category', {id:category.id}) }}">Suppress Your Category</a></td>
-                        <td><p class=""><img class="admin_image" src="{{ category.image }}"></p></td>
+                        <td><p class=""><img class="admin_image" src="{{ asset('images/'~category.image) }}"></p></td>
                         <td><a href="{{ path('category_db_by_id', {id:category.id}) }}">Go get Your Category</a></td>
                     </tr>
                 </section>

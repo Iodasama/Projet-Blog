@@ -5,52 +5,59 @@
 {% block content %}
 <body>
     <main>
-
         <section>
-            <div class="title">
-                <p id="test">A PROPOS</p>
-            </div>
-
-
-            <div class="text1">
-                <p>Ce blog est l’espace faisant le lien entre mes écrits et l’actualité, plus précisément une autre approche de ce qui nous est proposé de voir et d’entendre au sujet de la Chine. Mieux déchiffrer l’actualité en passant au crible divers médias, mieux mesurer les évènements et affiner la justesse de la vision que nous pouvons en avoir, voilà mon envie et mon challenge.</p>
-                <br>
-                <p>Car comme le dit si bien Bernard Werber:</p>
-            </div>
-            <div class="text2">
-                <p>«L’important n’est pas de convaincre, mais de donner à réfléchir.» </p>
-            </div>
-            <div class="text3">
-                <p>Mes écrits, articles ou essais, parlent de la Chine, du peuple chinois, de la culture chinoise, et, à travers ce prisme, proposent un regard différent sur le monde: un coup de projecteur, une analyse instantanée mettant en relief les grands ensembles macro économiques et financiers et leurs incidences sur les peuples et les Nations.</p>
-            </div>
+                <div class="title">
+                    <p id="test">A PROPOS</p>
+                </div>
+                <div class="text1">
+                    <p>Ce blog est l’espace faisant le lien entre mes écrits et l’actualité, plus précisément une autre approche de ce qui nous est proposé de voir et d’entendre au sujet de la Chine. Mieux déchiffrer l’actualité en passant au crible divers médias, mieux mesurer les évènements et affiner la justesse de la vision que nous pouvons en avoir, voilà mon envie et mon challenge.</p>
+                    <br>
+                    <p>Car comme le dit si bien Bernard Werber:</p>
+                </div>
+                <div class="text2">
+                    <p>«L’important n’est pas de convaincre, mais de donner à réfléchir.» </p>
+                </div>
+                <div class="text3">
+                    <p>Mes écrits, articles ou essais, parlent de la Chine, du peuple chinois, de la culture chinoise, et, à travers ce prisme, proposent un regard différent sur le monde: un coup de projecteur, une analyse instantanée mettant en relief les grands ensembles macro économiques et financiers et leurs incidences sur les peuples et les Nations.</p>
+                </div>
                 <div class="text4">
                     <p>Mais cet arrêt sur image n’est jamais figé. Le lecteur peut sentir le mouvement sous le flot des mots. Une manière de toucher, de sentir, d’appréhender les volumes en perpétuelle évolution. J’ai souhaité, de la meilleure façon possible, offrir une grille de lecture permettant de mieux déchiffrer une actualité chinoise très largement reliée mais toujours très difficile à comprendre.</p>
                 </div>
-
-
         </section>
-        <div class="section2">
-                <p id="test1">Qui suis-je?</p>
-                <p id="test2">Livres</p>
-        </div>
+        <section>
+                <div class="title">
+                    <p id="test">BLOG</p>
+                </div>
+        </section>
+{#        <h1 class="poke">Your favorite Category is here</h1>#}
         <section class="list-articles">
-            <h1 class="poke">Your favorite Category is here</h1>
             {% for category in categories %}
-            <h1 class="poke2" style="background-color: {{ category.color }}">{{ category.title }}</h1>
+                <article class="article-category">
+{#                    <div class="titreLogo">#}
+{#                    </div>#}
+
+{#                   {#<h1 class="poke2" style="">{{ category.title }}</h1>#}
+                    <a href="{{ path('category_db_by_id', {id:category.id}) }}"><i class="fa-solid fa-door-open"></i></a>
+                    <div class="pic-title">
+                        <div class="poke2"><img src="{{ asset('images/'~category.image) }}" alt="pic_categpry"></div>
+                        <h1 class="poke3" style="">{{ category.title }}</h1>
+                    </div>
+
+                </article>
+
+{#                <h1 class="poke2" style="background-color: {{ category.color }}">{{ category.title }}</h1>#}
             {#            <div class="test"><img src="{{asset('images/buildings-city-downtown-1008696_blog_pexel-650x433.jpg ' )}}" alt=""> </div>#}
 
             {#            <h1 class="poke2">{{ article.content}}</h1>#}
             {#            <h1 class="poke2">{{ article.description }}</h1>#}
             {#            <a href="{{ path('category_db_by_id', {id:catgory.id}) }}">Go get Your Category </a>#}
-            <p class="poke2"><img src="{{ category.image }}"></p>
+
 
             {#            <h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1>#}
-
-
-            <a href="{{ path('category_db_by_id', {id:category.id}) }}">See Category</a>
             {% endfor %}
-            <a href="{{ path('articles_list_db') }}">See Your Articles</a>
+
         </section>
+        <a href="{{ path('articles_list_db') }}">See Your Articles</a>
 
         <section class="section3">
             <p id="test3">Photos</p>

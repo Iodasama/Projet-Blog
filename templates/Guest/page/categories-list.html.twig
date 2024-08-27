@@ -13,7 +13,7 @@
 {#            <h1 class="poke2">{{ article.content}}</h1>#}
 {#            <h1 class="poke2">{{ article.description }}</h1>#}
 {#            <a href="{{ path('category_db_by_id', {id:catgory.id}) }}">Go get Your Category </a>#}
-            <p class="poke2"><img src="{{ category.image }}"></p>
+            <p class="poke2"><img src="{{ asset('images/'~category.image) }}"></p>
 
 {#            <h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1>#}
 
