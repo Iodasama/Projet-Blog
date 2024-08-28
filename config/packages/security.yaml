@@ -26,8 +26,7 @@ security:
                 check_path: app_admin_login
                 enable_csrf: true
                 default_target_path: app_admin_login
-            logout:
-                path: app_logout
+
         main:
             lazy: true
             provider: app_user_provider
@@ -40,7 +39,8 @@ security:
             logout:
                 path: app_logout
                 # where to redirect after logout
-                target: articles_list_db
+                target:  app_login
+#
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall

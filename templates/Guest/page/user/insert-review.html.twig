@@ -1,6 +1,10 @@
 {% extends "guest/base.html.twig" %}
 {% block content %}
-
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
 
     <h1>Create Review</h1>
 
@@ -44,6 +48,7 @@
        <p>{{ review.title }} </p>
         <p>{{ review.content }}</p>
     {% endfor %}
+
 
     <a href="home">Accueil</a>
 

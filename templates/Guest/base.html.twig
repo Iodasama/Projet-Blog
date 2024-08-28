@@ -32,21 +32,34 @@
             <li><a href="#test2">Livres</a></li>
             <li><a href="#test3">Photos</a></li>
             <li><a href="#test4">Contact</a></li>
+            <li><a href="{{ path('app_login') }}">Login</a></li>
+
         </ul>
     </nav>
 
         <h1 class="adminh1">User </h1>
-        {% for message in app.flashes('success') %}
-            <div class="success-message">
-                {{ message }}
-            </div>
-        {% endfor %}
+        <div class="messages">
+            {% for message in app.flashes('success') %}
+                <div class="success-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
 
-        {% for message in app.flashes('error') %}
-            <div class="error-message">
-                {{ message }}
-            </div>
-        {% endfor %}
+            {% for message in app.flashes('error') %}
+                <div class="error-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+{#            {% for label, messages in app.flashes %}#}
+{#                {% for message in messages %}#}
+{#                    <div class="flash-{{ label }}">#}
+{#                        message :  {{ message }}#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#            {% endfor %}#}
+        </div>
+
 
 {#        {% for message in app.flashes('error403') %}#}
 {#        <div class="error403-message">#}

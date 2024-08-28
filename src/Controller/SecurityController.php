@@ -19,15 +19,15 @@ class SecurityController extends AbstractController
         if( $this->isGranted('ROLE_ADMIN')) {
             return $this->redirectToRoute('admin_articles_list_db');
         } // si tu as le role ADMIN  alors redirection vers admin_articles_list_db
-        //si tu as le role USER alors redirection vers 'path'
+
 
         if ($currentUser !==null && $this->isGranted('ROLE_USER')) {
-
+            $this->addFlash('error', 'Error 403 Veuillez vous Login');
     //           dd($currentUser);
     //           $user= $entityManager->getRepository(User::class)->findOneBy(['id'=>$currentUser->getId()]);
     //           dd($user); soit cette methode soit celle du getId ci dessous
     //           $id= $currentUser->getId();
-            return $this->redirectToRoute('app_logout');
+            return $this->redirectToRoute('home_page');
 
     //           return $this->redirectToRoute('users_insert_review',['id'=>$id]);
     //           si on souhaite mettre un id mais faille dans la sécurité du coup n importe quel user une fois connecté
@@ -51,11 +51,12 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         $currentUser = $this->getUser();
-//        dump($currentUser);
+//        dd($currentUser);
 
         if ($currentUser !== null && $this->isGranted('ROLE_ADMIN')) {
-            $this->addFlash('error', 'Veuillez vous Login');
-            return $this->redirectToRoute('app_logout'); // si tu as le role ADMIN  alors redirection vers admin_articles_list_db
+//            $this->addFlash('error', 'Error 403 Veuillez vous Login');
+            return $this->render('Guest/page/403.html.twig');
+//            return $this->redirectToRoute('app_logout'); // si tu as le role ADMIN  alors redirection vers admin_articles_list_db
             //si tu as le role USER alors redirection vers 'path'
 
         }

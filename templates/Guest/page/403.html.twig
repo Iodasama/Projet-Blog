@@ -1,0 +1,10 @@
+{% extends "Guest/base.html.twig" %}
+{% block metatitle%} error 403 {% endblock %}
+
+{% block content %}
+    <!--symfony configure pour que cela parte directement depuis Templates donc  Page donc pas besoin de mettre templates pour le chemin meme si on cree le dossier Partial pour mettre sa base il faudra ecrire 'Partial/articles.html.twig' sans indiquer  templates {Pourcent extends "Page/base.html.twig" Pourcent} -->
+    <main>
+        <h2>403 ERROR !!</h2>
+        <a href="{{ path('app_logout')}}"> revenir connexion</a>
+    </main>
+{% endblock %}

@@ -189,11 +189,11 @@ tr {
   display: flex;
   justify-content: center;
 }
-.success-message{
-  font-size: xx-large;
-  color:#52110D;
-  text-shadow: #FC0 1px 0 10px;
-}
+/*.success-message{*/
+/*  font-size: xx-large;*/
+/*  color:#52110D;*/
+/*  text-shadow: #FC0 1px 0 10px;*/
+/*}*/
 
 
 
