@@ -6,7 +6,7 @@ namespace App\Controller\Guest;
 use App\Entity\Review;
 use App\Repository\BookRepository;
 use App\Repository\ReviewRepository;
-use App\Repository\UserRepository;
+use App\Repository\UserRepository; // seulement si on souhaite recuperer le user par id
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

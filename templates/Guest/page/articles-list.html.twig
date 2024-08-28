@@ -3,6 +3,12 @@
 {% block metatitle%} Your articles page{% endblock %}
 
 {% block content %}
+    {% for message in app.flashes('error403') %}
+        <div class="error403-message">
+            {{ message }}
+        </div>
+    {% endfor %}
+
     <main>
         <h1>Get Your favorite article  </h1>
         {% for article in articles %}

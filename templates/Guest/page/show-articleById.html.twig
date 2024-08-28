@@ -10,7 +10,7 @@
         {% if article and article.isPublished %}
             <h1 class="poke">Your favorite article here:</h1>
             <h1 class="poke2">{{ article.title }}</h1>
-            <p class="poke2"><img src="{{ article.image }}"></p>
+            <img class="admin_image" src="{{ asset('images/'~article.image) }}">
             <h1 class="poke2">{{ article.content }}</h1>
             <h1 class="poke2">{{ article.description }}</h1>
 

@@ -7,10 +7,10 @@
     <main>
         <h1 class="poke">Your favorite Category here:</h1>
         <h2 class="poke2">{{ category.title }}</h2>
+
         {% for article in category.articles %}
 {#            <p class="poke2"><img src="{{ category.image }}"></p>#}
-
-            <a href="{{ path('article_db_by_id', {id:article.id}) }}">See Your Article</a>
+            <a href="{{ path('article_db_by_id', {id:article.id}) }}"> Lire votre article <i class="fa-solid fa-file-pen"></i> </a>
         {% endfor %}
     </main>
 {% endblock %}

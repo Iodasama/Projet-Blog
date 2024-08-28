@@ -39,8 +39,8 @@
 {#                   {#<h1 class="poke2" style="">{{ category.title }}</h1>#}
 
                     <div class="pic-title">
-                        <div class="poke2"><img src="{{ asset('images/'~category.image) }}" alt="pic_categpry"></div>
-                        <a href="{{ path('category_db_by_id', {id:category.id}) }}"><h1 class="poke3" style="">{{ category.title }}</h1></a>
+                        <div class="poke2"><img src="{{ asset('images/'~category.image) }}" alt="pic_category"></div>
+                        <a href="{{ path('category_db_by_id', {id:category.id}) }}"  style="text-decoration:none"><h1 class="poke3" style="">{{ category.title }}</h1></a>
                     </div>
 
                 </article>
@@ -57,6 +57,7 @@
             {% endfor %}
 
         </section>
+
         <a href="{{ path('articles_list_db') }}">See Your Articles</a>
 
         <section class="section3">

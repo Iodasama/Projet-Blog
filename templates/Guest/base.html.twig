@@ -47,7 +47,14 @@
                 {{ message }}
             </div>
         {% endfor %}
-{#    <img class="img_header" src= "{{ asset('images/buildings-city-downtown-1008696_blog_pexel-650x433.jpg') }}" alt="logo">#}
+
+{#        {% for message in app.flashes('error403') %}#}
+{#        <div class="error403-message">#}
+{#            {{ message }}#}
+{#        </div>#}
+{#        {% endfor %}#}
+
+    {#    <img class="img_header" src= "{{ asset('images/buildings-city-downtown-1008696_blog_pexel-650x433.jpg') }}" alt="logo">#}
 <div class="book">
         <button class="button"> 请把鼠标放上来看看！  </button>
         <img class="image" src="{{ asset('images/la-chine-aux-rayons-x-couve-250x353.png') }}" alt="book-img">
