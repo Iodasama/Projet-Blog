@@ -65,6 +65,44 @@
             <p id="test4">Contact</p>
         </section>
 
+        <section>
+            <div class="owl-carousel owl-theme">
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/agriculture-asia-china-235648-650x433.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/asia-beijing-china-19872-650x433.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/agriculture-china-contours-68495-650x433.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/clouds-daylight-great-wall-of-china-1423596-650x433.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/ancient-antique-architecture-879359-650x433.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/buildings-city-downtown-1008696-blog-pexel-650x433-66b3786f6ab8a.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/architecture-buildings-china-1366957-650x433.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/altar-ancient-architecture-345157-650x433.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/architecture-buildings-business-683419-650x433-66cc940e5d9a2.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/Jerome_Photo003xx.jpg') }}"></h4></div>
+                <div class="item"><h4>11</h4></div>
+                <div class="item"><h4>12</h4></div>
+            </div>
+        </section>
+
 </main>
 </body>
 {% endblock %}
+{% block javascript %}
+  <script src="{{ asset('Js/owl.carousel.js') }}"></script>
+  <script>
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+  </script>
+{% endblock%}
