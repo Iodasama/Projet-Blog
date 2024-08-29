@@ -13,7 +13,6 @@
             <div class="form-example">
                 <label for="name">Commentaire objet:</label>
                 <input type="text" name="title" id="title" required /> <!-- required oblige a remplir  -->
-
             </div>
 
             <div class="form-example">
@@ -45,21 +44,29 @@
 </div>
 
 {#        {{ dump(app.user) }}#}
+    <div class="Review-Block">
+        <div class="Review-style">
+            {% for review in reviews %}
+                <p class="review1">{{ review.user.pseudo }}</p>
+                <div class="review">
+                    <p>Title : {{ review.title }} </p><br>
+                    <p>{{ review.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
-        {% for review in reviews %}
-
-    {#        {% if review.user %}#}
-            <p>{{ review.user.pseudo }}</p>
-    {#        PSeudo ou pseudo#}
-    {#        {% else %}#}
-    {#            <p>User information not available</p>#}
-    {#        {% endif %}#}
-            <p>{{ review.title }} </p>
-            <p>{{ review.content }}</p>
-        {% endfor %}
 
 
     <a href="home">Accueil</a>
 
 
 {% endblock %}
+
+{#pour debug user#}
+    {#        {% if review.user %}#}
+    {#        <p>{{ review.user.pseudo }}</p>#}
+    {#        PSeudo ou pseudo#}
+    {#        {% else %}#}
+    {#            <p>User information not available</p>#}
+    {#        {% endif %}#}

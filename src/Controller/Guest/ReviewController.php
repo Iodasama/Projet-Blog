@@ -26,7 +26,9 @@ class ReviewController extends AbstractController //commentaire test commit
 
         $books = $bookRepository->findAll();
 
-        $reviews = $reviewRepository->findAll();
+        $reviews = $reviewRepository->findByReview();
+
+//        dd($reviews);
 
 
 
@@ -45,7 +47,7 @@ class ReviewController extends AbstractController //commentaire test commit
                 // je lui place les valeurs que je veux (title, content)
                 $review->setTitle($title);
                 $review->setContent($content);
-//                $review->setUser($this->getUser());
+                $review->setUser($this->getUser()); // obligatoire pour créer le review pour recuperer le pseudo si on ne l emet pas cela va mettre une valeur null et il faut bien une valeur
                 $review->setBook($book);
 //                $review->setPseudo($pseudo);
 //                $review->setCreatedAt(new \DateTime('now'));

@@ -613,11 +613,11 @@ section {
   display: flex;
   flex-direction: column;
   align-items: start;
-  border: 1px solid #fd4c2e;
+  border: 1px solid #dd3333;
   border-radius: 25px;
   background-color: #fefee5;
   width:800px;
-  box-shadow: 12px 12px #fd4c2e;
+  box-shadow: 12px 12px #dd3333;
 padding:20px;
 
 
@@ -650,18 +650,75 @@ padding:20px;
 .form-example input[type="submit"]{
   width:30%;
   margin-left:auto;
-  background-color: #fd4c2e;
+  background-color: #dd3333;
   border-radius: 25px;
-  border-color: #fd4c2e;
+  border-color: transparent;
 }
 
 .form-example input[type="submit"]:hover{
-  color: #fefee5;
+  color: #dd3333;
+  background-color: #fefee5;
+  box-shadow: 12px 12px #dd3333 ;
+
+
+
+
 }
 
 .choose-book{
   display: flex
 }
+
+.Review-style{
+
+
+  border: 1px solid #dd3333;
+  border-radius: 25px;
+  background-color: #fefee5;
+  width:800px;
+  box-shadow: 12px 12px #dd3333;
+  padding:20px;
+}
+
+.Review-Block{
+  display: flex;
+  justify-content: center;
+ padding-top: 50px;
+}
+
+.review{
+  border: 1px solid #dd3333;
+  border-radius: 25px;
+  background-color: #fefee5;
+  width: 720px;
+  box-shadow: 12px 12px #dd3333;
+  padding:20px;
+  margin:20px;
+
+}
+
+.review:hover{
+  color: #fefee5;
+  background-color:#dd3333 ;
+  box-shadow: 12px 12px #fefee5;
+
+}
+
+.review1 {
+  border: 1px solid #3e3e3e;
+  border-radius: 25px;
+  background-color: #fefee5;
+  width: 720px;
+  box-shadow: 12px 12px #3e3e3e;
+  padding:20px;
+  margin:20px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+
+
+
 
 
 /*!*# sourceMappingURL=app.css.map *!*/
