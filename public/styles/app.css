@@ -609,59 +609,59 @@ section {
   padding-bottom: 50px;
 }
 
-/*.form-examples {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: start;*/
-/*  border: 1px solid #fd4c2e;*/
-/*  border-radius: 25px;*/
-/*  background-color: #fefee5;*/
-/*  width:800px;*/
-/*  box-shadow: 12px 12px #fd4c2e;*/
-/*padding:20px;*/
+.form-examples {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border: 1px solid #fd4c2e;
+  border-radius: 25px;
+  background-color: #fefee5;
+  width:800px;
+  box-shadow: 12px 12px #fd4c2e;
+padding:20px;
 
 
-/*}*/
+}
 
-/*.formulaire-review {*/
-/*  display:flex;*/
-/*  align-items: center;*/
-/*  flex-direction: column;*/
-/*}*/
+.formulaire-review {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
 
-/*.form-example, .form-example>div{*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*  align-items: center;*/
-/*  width:100%;*/
-/*  margin:10px 0;*/
-/*}*/
+.form-example, .form-example>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  margin:10px 0;
+}
 
-/*.form-example label, .form-example input, .form-example select, .form-example textarea{*/
-/*  display: block;*/
-/*  width:65%;*/
+.form-example label, .form-example input, .form-example select, .form-example textarea{
+  display: block;
+  width:65%;
 
-/*}*/
+}
 
-/*.form-example label{*/
-/*  width:30%*/
-/*}*/
+.form-example label{
+  width:30%
+}
 
-/*.form-example input[type="submit"]{*/
-/*  width:30%;*/
-/*  margin-left:auto;*/
-/*  background-color: #fd4c2e;*/
-/*  border-radius: 25px;*/
-/*  border-color: #fd4c2e;*/
-/*}*/
+.form-example input[type="submit"]{
+  width:30%;
+  margin-left:auto;
+  background-color: #fd4c2e;
+  border-radius: 25px;
+  border-color: #fd4c2e;
+}
 
-/*.form-example input[type="submit"]:hover{*/
-/*  color: #fefee5;*/
-/*}*/
+.form-example input[type="submit"]:hover{
+  color: #fefee5;
+}
 
-/*.choose-book{*/
-/*  display: flex*/
-/*}*/
+.choose-book{
+  display: flex
+}
 
 
 /*!*# sourceMappingURL=app.css.map *!*/
