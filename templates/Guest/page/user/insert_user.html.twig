@@ -1,32 +1,34 @@
 {% extends "guest/base.html.twig" %}
 {% block content %}
-    <h1>Création d'un User</h1>
+
+<div class = "formulaire-review">
+        <h1>Création d'un User</h1>
 
     {#Formulaire a la main pour deux lignes plutot que de passer par le gabarit Form#}
 
-    <form method="post">
-        <div>
+    <form method="post" class ="form-examples">
+        <div class="form-example">
             <label>
                 Pseudo
                 <input type="text" name="pseudo" />
             </label>
         </div>
-        <div>
+        <div class="form-example">
             <label>
                 Email
                 <input type="email" name="email" />
             </label>
         </div>
 
-        <div>
+        <div class="form-example">
             <label>
                 Mot de passe
                 <input type="password" name="password" />
             </label>
         </div>
-
+        <div class="form-example">
         <input type="submit" value="Créer"/>
-
+        </div>
     </form>
 
 

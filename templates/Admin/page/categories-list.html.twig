@@ -12,26 +12,23 @@
     <main>
         <h1>Get Your favorite category  </h1>
 
-        <table class="admin-article-table">
+        <table id="myTable">
+            <thead>
             <tr>
                 <td>Id</td>
                 <td>Titre</td>
-{#                <td>Color</td>#}
                 <td>Date</td>
                 <td>Supprimer category</td>
                 <td>Image</td>
                 <td>Lien catégorie</td>
-
-
-
             </tr>
+            </thead>
+            <tbody>
             {% for category in categories %}
                 <section class="admin-article-table">
                     <tr>
                         <td><h1 class="poke2">{{ category.id }}</h1></td>
                         <td><h1 class="poke2">{{ category.title }}</h1></td>
-                        {# dans twig on accede a la propriété title de l'instance de la classe article requete sql#}
-{#                        <td><h1 class="poke2">{{ category.color}}</h1></td>#}
                         <td><h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1></td>
                         <td><a href="{{ path('delete_category', {id:category.id}) }}">Suppress Your Category</a></td>
                         <td><p class=""><img class="admin_image" src="{{ asset('images/'~category.image) }}"></p></td>
@@ -39,12 +36,20 @@
                     </tr>
                 </section>
             {% endfor %}
+            </tbody>
         </table>
-
-
-
+        {#                <td>Color</td>#}  {# dans twig on accede a la propriété title de l'instance de la classe article requete sql#}
+        {#                        <td><h1 class="poke2">{{ category.color}}</h1></td>#}
         {#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Article</a>#}
     </main>
 
+{% endblock %}
 
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
+<script>
+    let table = new DataTable('#myTable');
+</script>
 {% endblock %}

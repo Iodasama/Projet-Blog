@@ -3,32 +3,35 @@
 {% block metatitle%} Your articles page{% endblock %}
 
 {% block content %}
-
+{#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">#}
 
     <main>
-        <h1>Get Your favorite article  </h1>
-        {% for article in articles %}
-{#            {% if article.isPublished %}#}
-                <h1 class="poke">Your favorite Article is here</h1>
-                <article class="article" >
-                    <h1 class="poke2">{{ article.title }}</h1>
-                    <h2 class="poke2">{{ article.content}}</h2>
-                    <h3 class="poke2">{{ article.description }}</h3>
-                    <a href="{{ path('article_db_by_id', {id:article.id}) }}">Go get Your Article</a>
-{#                    <p class="poke2"><img src="{{ article.image }}"></p>#}
-                    <img class="admin_image" src="{{ asset('images/'~article.image) }}">
+        <div class = "formulaire-review">
+                 <h1>Get Your favorite article  </h1>
 
-                    <h1 class="poke2">{{ article.createdAt |date("Y/m/d") }}</h1>
-                </article>
+            {% for article in articles %}
+                <div class ="form-examples">
+    {#            {% if article.isPublished %}#}
+                    <h1 class="poke">Your favorite Article is here</h1>
+                    <article class="article" >
+                        <h1 class="poke2">{{ article.title }}</h1>
+                        <h2 class="poke2">{{ article.content}}</h2>
+                        <h3 class="poke2">{{ article.description }}</h3>
+                        <a href="{{ path('article_db_by_id', {id:article.id}) }}">Go get Your Article</a>
+    {#                    <p class="poke2"><img src="{{ article.image }}"></p>#}
+                        <img class="admin_image" src="{{ asset('images/'~article.image) }}">
+
+                        <h1 class="poke2">{{ article.createdAt |date("Y/m/d") }}</h1>
+                    </article>
+           </div>
+
 {#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Article</a>#}
 {#            {% endif %}#}
         {% endfor %}
 
-        <p id="test">ACCUEIL</p>
-        <p id="test1">Qui suis-je?</p>
-        <p id="test2">Livres</p>
-        <p id="test3">Photos</p>
-        <p id="test4">Contact</p>
+
+        </div>
+
     </main>
 {% endblock %}
 

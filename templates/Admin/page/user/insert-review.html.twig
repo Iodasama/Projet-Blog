@@ -39,11 +39,19 @@
 
     </form>
 
-    {% for review in reviews %}
-       <p>{{ review.title }} </p>
-        <p>{{ review.content }}</p>
-        <a href="{{ path('delete_review', {id: review.id}) }}">Suppress Review</a>
-    {% endfor %}
+    <div class="Review-Block">
+        <div class="Review-style">
+            {% for review in reviews %}
+                <p class="review1">{{ review.user.pseudo }}</p>
+                <div class="review">
+                    <p>Title : {{ review.title }} </p><br>
+                    <p>{{ review.content }}</p>
+                </div>
+                <a href="{{ path('delete_review', {id: review.id}) }}">Suppress Review</a>
+            {% endfor %}
+        </div>
+    </div>
+
 
 
 

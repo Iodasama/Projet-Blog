@@ -618,15 +618,15 @@ section {
   background-color: #fefee5;
   width:800px;
   box-shadow: 12px 12px #dd3333;
-padding:20px;
-
-
+  padding:20px;
+  margin-bottom: 70px;
 }
 
 .formulaire-review {
   display:flex;
   align-items: center;
   flex-direction: column;
+  padding-top: 50px;
 }
 
 .form-example, .form-example>div{
@@ -659,10 +659,6 @@ padding:20px;
   color: #dd3333;
   background-color: #fefee5;
   box-shadow: 12px 12px #dd3333 ;
-
-
-
-
 }
 
 .choose-book{
@@ -670,7 +666,6 @@ padding:20px;
 }
 
 .Review-style{
-
 
   border: 1px solid #dd3333;
   border-radius: 25px;
@@ -683,7 +678,8 @@ padding:20px;
 .Review-Block{
   display: flex;
   justify-content: center;
- padding-top: 50px;
+  padding-top: 50px;
+  margin-bottom: 50px;
 }
 
 .review{
@@ -702,6 +698,9 @@ padding:20px;
   background-color:#dd3333 ;
   box-shadow: 12px 12px #fefee5;
 
+}
+.createUser {
+ padding-top: 50px;
 }
 
 .review1 {

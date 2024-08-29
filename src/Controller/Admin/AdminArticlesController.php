@@ -20,7 +20,7 @@ class AdminArticlesController extends AbstractController
 {
 
     #[Route('/', name: 'public')]
-    public function number(): Response
+    public function welcoming (): Response
     {
         return new Response(
             '<html><body>你们好！欢迎你们来看看雷杰的博客！！</body></html>'
