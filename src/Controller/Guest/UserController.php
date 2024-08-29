@@ -20,7 +20,7 @@ class UserController extends AbstractController
         if ($request->getMethod() === "POST") {
             $email = $request->request->get('email');
             $password = $request->request->get('password'); // avec la methode Post la demande de création du user a été envoyée, je recupere les donnees POST
-
+            $pseudo = $request->request->get('pseudo');
             $user = new User(); // instancie une nouvelle classe User
 
             try {
@@ -33,12 +33,13 @@ class UserController extends AbstractController
                 $user->setEmail($email);
                 $user->setPassword($hashedPassword);
                 $user->setRoles(['ROLE_USER']);
+                $user->setPseudo($pseudo);
 
                 //on instancie la classe entityManager pour ce faire on type EntityManagerInterface et on la placera en parametre ainsi que $EntityManagerInterface
                 $entityManager->persist($user); // preparation de la requete
                 $entityManager->flush(); // execution de la requete
 
-                $this->addFlash('success', 'User créé'); //je cree mon message flash
+                $this->addFlash('success', 'User créé - 你好 cher User 👋 Bienvenue vous pouvez vous Login'); //je cree mon message flash
 
             } catch (\Exception $exception) {
                 // $this->addFlash('error', $exception->getMessage()); il faut éviter de renvoyer le message directement récupéré depuis les erreurs SQL

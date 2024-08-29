@@ -24,12 +24,15 @@ class Review
     private ?\DateTimeInterface $createdAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'reviews')]
-    #[ORM\JoinColumn(nullable: true)] // il faut que cela soit nullable sinon le user_id ne pouvant etre NULL il est impossible de creer le review
+    #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")] // on cascade si le user disparait les commentaires egalement // il faut que cela soit nullable sinon le user_id ne pouvant etre NULL il est impossible de creer le review
     private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'reviews')] // il faut que cela soit nullable sinon le book_id ne pouvant etre NULL il est impossible de creer le review
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: false,onDelete: "CASCADE")] // on cascade si le book disparait les commentaires egalement
     private ?Book $book = null;
+
+    #[ORM\Column(length: 255,nullable: true)]
+    private ?string $pseudo = null;
 
     public function __construct() { // penser a bien le mettre sinon ca passe pas au niveau des dates quand on veut creer le review
 
@@ -97,6 +100,18 @@ class Review
     public function setBook(?Book $book): static
     {
         $this->book = $book;
+
+        return $this;
+    }
+
+    public function getPseudo(): ?string
+    {
+        return $this->pseudo;
+    }
+
+    public function setPseudo(string $pseudo): static
+    {
+        $this->pseudo = $pseudo;
 
         return $this;
     }

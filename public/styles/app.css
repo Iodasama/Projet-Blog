@@ -24,11 +24,12 @@ i{
 
 
 body {
-  background-color: #fdfde5;
+  background-color: #fefee5;
 }
 .list-articles {
   padding-top: 50px;
-  margin-left: 150px;
+  padding-bottom: 100px;
+  margin-left: 125px;
   display: flex;
   justify-content: space-around;
   gap:50px;
@@ -89,7 +90,7 @@ img {
 
 .book {
   overflow:hidden;
-  height: 70%;
+  height: 100%;
   width: 100%;
   position: relative;
 
@@ -100,7 +101,7 @@ img {
   top:380px;
   right: 400px;
   position: absolute;
-  background-color: #5B21B6;
+  /*background-color: #5B21B6;*/
   width:190px;
   transform: translateX(350%);/*** DESCENTE SI Y - DROITE SI X  ***/
   transition: transform 1s ease;
@@ -151,11 +152,14 @@ button:hover + .image, .image:hover {
 .headerGuest {
 
   background-image: url('../../public/images/buildings-city-downtown-1008696_blog_pexel-650x433.jpg');
-  background-size: contain;
+  /*background-position: center bottom 99%  ;*/
+  background-size: cover;
   /*contain pour prendre plus de place*/
   background-repeat: no-repeat;
-  /*height:100vh;*/
-  height:130vh;
+
+  height: 110vh;
+  padding-bottom: 100px;
+
 
 }
 
@@ -297,6 +301,8 @@ a:hover{ color:red}
 
 }
 
+
+
 footer {
 
   background-image: url('../../public/images/buildings-city-downtown-1008696_blog_pexel-650x433.jpg');
@@ -312,6 +318,8 @@ footer {
   justify-content: end;
   align-items: center;
 }
+
+
 a {
 
   /*text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;*/
@@ -344,13 +352,6 @@ a {
 
 }
 
-form.form-example {
-  display: table;
-}
-
-div.form-example {
-  display: table-row;
-}
 
 label,
 input {
@@ -361,13 +362,11 @@ input {
 label {
   padding-right: 10px;
 }
-#test {
-  padding-top: 50px;
 
-  /*text-decoration: underline;*/
-}
 .title { display:flex;
   justify-content: center;
+  padding-top: 100px ;
+
 }
 .text1 { display:flex;
   flex-direction: column;
@@ -405,11 +404,67 @@ label {
   margin-right:20px;
   text-align: justify;
 }
+
+.text5 {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  margin-top: 0;
+  margin-left:20px;
+  margin-right:50px;
+  text-align: justify;
+}
+.text6{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.text7{
+text-align: start;
+margin-left:18px;
+margin-top:40px;
+padding-bottom: 50px;
+display: flex;
+}
+
+.buy-button{
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+  margin: 20px;
+  background-color: #de3333;
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 10px;
+}
+.buy-button:hover{
+  border: 1px solid red;
+  cursor: crosshair;
+  box-shadow: 12px 12px orange;
+  border-radius: 20px;
+}
+
+.a-maishu:hover{ color:white}
+
+
+.text8 {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  margin-top: 0;
+  margin-left:20px;
+  text-align: justify;
+}
 /*css pour Trait du A propos*/
 #test{
   position: relative;
   padding-bottom: 10px;
+  padding-top: 50px;
 }
+
 /*css pour Trait du A propos*/
 
 #test::after{
@@ -422,6 +477,72 @@ label {
   background-color: #000;
   position: absolute;
 }
+#test1{
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 50px;
+}
+#test1::after{
+  content:"";
+  left:50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width:20px;
+  height:2px;
+  background-color: #000;
+  position: absolute;
+}
+
+#test2{
+  padding-top: 30px;
+}
+/*#test2{*/
+/*  position: relative;*/
+/*  padding-bottom: 10px;*/
+/*  padding-top: 50px;*/
+/*}*/
+/*#test2::after{*/
+/*  content:"";*/
+/*  left:50%;*/
+/*  bottom: -1px;*/
+/*  transform: translateX(-50%);*/
+/*  width:20px;*/
+/*  height:2px;*/
+/*  background-color: #000;*/
+/*  position: absolute;*/
+/*}*/
+#test3{
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 50px;
+}
+#test3::after{
+  content:"";
+  left:50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width:20px;
+  height:2px;
+  background-color: #000;
+  position: absolute;
+}
+
+#test4{
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 50px;
+}
+#test4::after{
+  content:"";
+  left:50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width:20px;
+  height:2px;
+  background-color: #000;
+  position: absolute;
+}
+
 
 section {
   width: 1000px;
@@ -433,6 +554,114 @@ section {
   height:150px;
 }
 
+.item2 img{
+  width:70%;
+  position:relative;
+  top:40px;
+  left:20px;
+
+}
+.item3{
+  display:flex;
+  justify-content: center;
+}
+
+.item3 img{
+  margin-top: 30px;
+  width:70%;
+}
+
+.item4 img{
+  margin-top: 40px;
+  width:20vw;
+  position: relative;
+  left: 50px;
+  padding-right: 20px;
+  transition: transform .1s;
+}
+
+.item4 img:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5);
+}
+
+
+.presentation {
+  display:flex;
+
+}
+
+.bcblanc {
+  background-color: white;
+  width: 100%;
+
+
+  .aPropos{
+    width: 70%;
+    margin: auto;
+  }
+}
+
+
+
+.owl-carousel {
+  padding-bottom: 50px;
+}
+
+/*.form-examples {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: start;*/
+/*  border: 1px solid #fd4c2e;*/
+/*  border-radius: 25px;*/
+/*  background-color: #fefee5;*/
+/*  width:800px;*/
+/*  box-shadow: 12px 12px #fd4c2e;*/
+/*padding:20px;*/
+
+
 /*}*/
 
-/*# sourceMappingURL=app.css.map */
+/*.formulaire-review {*/
+/*  display:flex;*/
+/*  align-items: center;*/
+/*  flex-direction: column;*/
+/*}*/
+
+/*.form-example, .form-example>div{*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  width:100%;*/
+/*  margin:10px 0;*/
+/*}*/
+
+/*.form-example label, .form-example input, .form-example select, .form-example textarea{*/
+/*  display: block;*/
+/*  width:65%;*/
+
+/*}*/
+
+/*.form-example label{*/
+/*  width:30%*/
+/*}*/
+
+/*.form-example input[type="submit"]{*/
+/*  width:30%;*/
+/*  margin-left:auto;*/
+/*  background-color: #fd4c2e;*/
+/*  border-radius: 25px;*/
+/*  border-color: #fd4c2e;*/
+/*}*/
+
+/*.form-example input[type="submit"]:hover{*/
+/*  color: #fefee5;*/
+/*}*/
+
+/*.choose-book{*/
+/*  display: flex*/
+/*}*/
+
+
+/*!*# sourceMappingURL=app.css.map *!*/

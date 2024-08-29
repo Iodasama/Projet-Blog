@@ -39,6 +39,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Review::class, mappedBy: 'user', orphanRemoval: true)]
     private Collection $reviews;
 
+    #[ORM\Column(length: 255, nullable: false)]
+    private ?string $Pseudo = null;
+
     public function __construct()
     {
         $this->reviews = new ArrayCollection();
@@ -144,6 +147,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $review->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPseudo(): ?string
+    {
+        return $this->Pseudo;
+    }
+
+    public function setPseudo(string $Pseudo): static
+    {
+        $this->Pseudo = $Pseudo;
 
         return $this;
     }

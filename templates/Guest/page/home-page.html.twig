@@ -5,13 +5,14 @@
 {% block content %}
 <body>
     <main>
-        <section>
+        <section class="bcblanc">
+            <article class="aPropos">
                 <div class="title">
                     <p id="test">A PROPOS</p>
                 </div>
                 <div class="text1">
-                    <p>Ce blog est l’espace faisant le lien entre mes écrits et l’actualité, plus précisément une autre approche de ce qui nous est proposé de voir et d’entendre au sujet de la Chine. Mieux déchiffrer l’actualité en passant au crible divers médias, mieux mesurer les évènements et affiner la justesse de la vision que nous pouvons en avoir, voilà mon envie et mon challenge.</p>
-                    <br>
+                    <p>Ce blog est l’espace faisant le lien entre mes écrits et l’actualité, plus précisément une autre approche de ce qui nous est proposé de voir et d’entendre au sujet de la Chine. Mieux déchiffrer l’actualité en passant au crible divers médias, mieux mesurer les évènements et affiner la justesse de la vision que nous pouvons en avoir, voilà mon envie et mon challenge.
+                    </p><br>
                     <p>Car comme le dit si bien Bernard Werber:</p>
                 </div>
                 <div class="text2">
@@ -23,10 +24,10 @@
                 <div class="text4">
                     <p>Mais cet arrêt sur image n’est jamais figé. Le lecteur peut sentir le mouvement sous le flot des mots. Une manière de toucher, de sentir, d’appréhender les volumes en perpétuelle évolution. J’ai souhaité, de la meilleure façon possible, offrir une grille de lecture permettant de mieux déchiffrer une actualité chinoise très largement reliée mais toujours très difficile à comprendre.</p>
                 </div>
-        </section>
+            </article>
         <section>
                 <div class="title">
-                    <p id="test">BLOG</p>
+                    <p id="test4">BLOG</p>
                 </div>
         </section>
 {#        <h1 class="poke">Your favorite Category is here</h1>#}
@@ -56,14 +57,67 @@
             {#            <h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1>#}
             {% endfor %}
 
+            </section>
+        </section>
+            <a href="{{ path('articles_list_db') }}">See Your Articles</a>
+
+        <section class ="section3">
+            <div class="title">
+                <p id="test1">QUI SUIS-JE?</p>
+            </div>
+       <div class="presentation">
+           <div class="item2"><img src="{{ asset('images/Jerome_Photo001x.jpg') }}" alt="LeiJie-Pic"></div>
+           <div class="text5">
+                   <p>Titulaire d’une maitrise de langue littérature et civilisation chinoises, cela fait 30 ans que ma vie personnelle et professionnelle sont intimement liées à l’Asie et à la Chine.
+
+                       Un premier déplacement à Taiwan（台湾）en 1998 puis c’est l’appel irrésistible de la Chine continentale (中国大陆). Fort d’une expérience d’officier Relations Internationales (Chine) dans l’Armée de l’air, je pars y vivre et finis par m’y installer durant sept ans, de 2009 a 2016.
+
+                       Là bas, j’ai l’occasion d’exercer plusieurs professions, notamment Grand Ambassadeur pour des maisons de vins ou Manager de restaurants français et chinois. </p>
+           </div>
+
+       </div>
+        <div class="text5">
+            <p> C’est à ma demande et après deux ans passés en totale immersion que mes amis me donnent mon nom chinois, celui qui est aussi devenu mon nom d’auteur : </p>
+        </div>
+        <div class="text6">
+            <p>Lei Jie</p>
+        </div>
+        <div class="item3"><img src="{{ asset('images/lei-jie.png') }}" alt="LeiJie-Pic"></div>
         </section>
 
-        <a href="{{ path('articles_list_db') }}">See Your Articles</a>
+        <section class="bcblanc">
+            <article class="aPropos">
+            <div class="text7">
+                <p id="test2">LA CHINE AUX RAYONS X</p>
+            </div>
+            <div class="presentation">
+                    <div class="text8">
+                        <p>Comprendre la Chine, c’est aussi admettre un certain paradoxe existant entre la rigidité de ses lois et la souplesse de la philosophie portée par son peuple. Comprendre la place de la Chine dans le monde, c’est comprendre la réalité d’un pays gigantesque, chargé de traditions ancestrales, dont les choix économiques, sociaux et politiques ont toujours d’abord été tournés vers l’intérêt national.
+                          Au retour de sa longue expérience d’expatrié en Chine, Lei Jie, ainsi qu’il a été rebaptisé par ses amis chinois, a souhaité partager sa vision éclairée d’un pays encore largement méconnu par le monde occidental.</p><br>
+                        <p>Au travers de ses différents enjeux économiques, sociaux, démographiques, écologiques, il nous livre un instantané à la fois pragmatique et visionnaire de la place de la Chine au cœur de l’actualité mondiale. Une Chine qu’il passe aux rayons X.</p>
+                    </div>
 
-        <section class="section3">
-            <p id="test3">Photos</p>
-            <p id="test4">Contact</p>
+                    <div class="item4">
+                        <img src="{{ asset('images/la-chine-aux-rayons-x-couve-509x720.png') }}" alt="BookFront-Pic">
+                    </div>
+
+                    <div class="item4">
+                        <img src="{{ asset('images/la-chine-aux-rayons-x-dos-509x720 (1).png') }}" alt="BookBack-Pic">
+                    </div>
+
+            </div>`
+                    <div class="text7">
+                        <p>Acheter le livre ：</p>
+                        <div class="buy-button"><a class="a-maishu" href="{{ 'https://www.thebookedition.com/fr/la-chine-aux-rayons-x-p-357133.html'}}"> 买书 </a></div>
+                    </div>
+            </article>
+
         </section>
+
+
+        <div class="title">
+            <p id="test">GALERIE DE PHOTOS</p>
+        </div>
 
         <section>
             <div class="owl-carousel owl-theme">
@@ -77,11 +131,12 @@
                 <div class="item"><h4><img class="admin_image" src="{{ asset('images/altar-ancient-architecture-345157-650x433.jpg') }}"></h4></div>
                 <div class="item"><h4><img class="admin_image" src="{{ asset('images/architecture-buildings-business-683419-650x433-66cc940e5d9a2.jpg') }}"></h4></div>
                 <div class="item"><h4><img class="admin_image" src="{{ asset('images/Jerome_Photo003xx.jpg') }}"></h4></div>
-                <div class="item"><h4>11</h4></div>
-                <div class="item"><h4>12</h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/Jerome_Photo003xx.jpg') }}"></h4></div>
+                <div class="item"><h4><img class="admin_image" src="{{ asset('images/Jerome_Photo003xx.jpg') }}"></h4></div>
+
             </div>
         </section>
-
+{#        <p id="test4">Contact</p>#}
 </main>
 </body>
 {% endblock %}
@@ -92,6 +147,9 @@
     loop:true,
     margin:10,
     nav:true,
+    autoplay:true,
+    autoplayTimeout:2000,
+    autoplayHoverPause:true,
     responsive:{
         0:{
             items:1

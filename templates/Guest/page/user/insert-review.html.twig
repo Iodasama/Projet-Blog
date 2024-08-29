@@ -5,49 +5,58 @@
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
+<div class = "formulaire-review">
+        <h1>Create Review</h1>
 
-    <h1>Create Review</h1>
+        <form action="" method="post" class="form-examples">
 
-    <form action="" method="post" class="form-examples">
+            <div class="form-example">
+                <label for="name">Commentaire objet:</label>
+                <input type="text" name="title" id="title" required /> <!-- required oblige a remplir  -->
 
-        <div class="form-example">
-            <label for="name">Commentaire objet:
-            <input type="text" name="title" id="title" required />
-            <!-- required oblige a remplir  -->
-            </label>
-        </div>
-        <div class="form-example">
-            <label for="book-select">Choose a Book:</label>
+            </div>
 
-            <select name="book_id" id="book-select">
-                <option value="">--Please choose an option--</option>
-                {% for book in books %}
-                <option value="{{book.id}}">{{book.title}}</option>
-                {% endfor %}
-            </select>
+            <div class="form-example">
+                <div class="choose-book">
+                    <label for="book-select">Choose a Book:</label>
+                    <select name="book_id" id="book-select">
+                        <option value="">--Please choose an option--</option>
+                        {% for book in books %}
+                        <option value="{{book.id}}">{{book.title}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
 
-
-        </div>
-        <div class="form-example">
-            <label for="content">Enter your comment: {#            penser a mettre un label avec un textarea#}
+            <div class="form-example">
+                <label for="content">Enter your comment:  </label> {#            penser a mettre un label avec un textarea#}
                 <textarea id="content" name="content" rows="4" cols="50" placeholder="Write your message here"></textarea>
-            </label>
 
-        </div>
-{#        <div class="form-example">#}
-{#            <label for="email">Enter your email: </label>#}
-{#            <input type="email" name="email" id="email" required />#}
-{#        </div>#}
-        <div class="form-example">
-            <input type="submit" value="Post your comment!" />
-        </div>
+            </div>
+    {#        <div class="form-example">#}
+    {#            <label for="email">Enter your email: </label>#}
+    {#            <input type="email" name="email" id="email" required />#}
+    {#        </div>#}
+            <div class="form-example">
+                <input type="submit" value="Post your comment!" />
+            </div>
 
-    </form>
+        </form>
+</div>
 
-    {% for review in reviews %}
-       <p>{{ review.title }} </p>
-        <p>{{ review.content }}</p>
-    {% endfor %}
+{#        {{ dump(app.user) }}#}
+
+        {% for review in reviews %}
+
+    {#        {% if review.user %}#}
+            <p>{{ review.user.pseudo }}</p>
+    {#        PSeudo ou pseudo#}
+    {#        {% else %}#}
+    {#            <p>User information not available</p>#}
+    {#        {% endif %}#}
+            <p>{{ review.title }} </p>
+            <p>{{ review.content }}</p>
+        {% endfor %}
 
 
     <a href="home">Accueil</a>

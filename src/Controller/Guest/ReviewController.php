@@ -20,7 +20,9 @@ class ReviewController extends AbstractController //commentaire test commit
     public function insertReview( Request $request, EntityManagerInterface $entityManager, BookRepository $bookRepository,ReviewRepository $reviewRepository): Response
       {
 //          int $id,
-//        $user = $userRepository->find($id);
+//        $currentUser = $this->getUser();
+//        $user = $userRepository->find($currentUser);
+//        $users = $userRepository->findAll();
 
         $books = $bookRepository->findAll();
 
@@ -31,8 +33,11 @@ class ReviewController extends AbstractController //commentaire test commit
         if ($request->getMethod() === "POST") {
 
             $book = $bookRepository->find($request->request->get('book_id'));
+//            $user = $userRepository->find($request->request->get('user_id'));
             $title = $request->request->get('title');
-            $content = $request->request->get('content'); // avec la methode Post la demande de création du user a été envoyée, je recupere les donnees POST
+            $content = $request->request->get('content');
+//            $pseudo = $request->request->get('pseudo'); // pas besoin car je passe par la FK de User pour recuperer le pseudo
+                // avec la methode Post la demande de création du user a été envoyée, je recupere les donnees POST
 
             $review = new Review(); // instancie une nouvelle classe User
 
@@ -40,8 +45,9 @@ class ReviewController extends AbstractController //commentaire test commit
                 // je lui place les valeurs que je veux (title, content)
                 $review->setTitle($title);
                 $review->setContent($content);
-//                $review->setUser($user);
+//                $review->setUser($this->getUser());
                 $review->setBook($book);
+//                $review->setPseudo($pseudo);
 //                $review->setCreatedAt(new \DateTime('now'));
 
 
@@ -64,6 +70,8 @@ class ReviewController extends AbstractController //commentaire test commit
 
         return $this->render('Guest/page/user/insert-review.html.twig', [ 'books' => $books,'reviews' => $reviews]); // je retourne le formulaire
     }
+
+
 
 //    #[Route('/users/insert-review/{id}', name: 'users_insert_review')]
 //    //Je cree la route, je lui passe le nom de admin_articles_list_db
