@@ -5,12 +5,17 @@
 {% block content %}
     <!--symfony configure pour que cela parte directement depuis Templates donc  Page donc pas besoin de mettre templates pour le chemin meme si on cree le dossier Partial pour mettre sa base il faudra ecrire 'Partial/articles.html.twig' sans indiquer  templates {Pourcent extends "Page/base.html.twig" Pourcent} -->
     <main>
-        <h1 class="poke">Your favorite Category here:</h1>
-        <h2 class="poke2">{{ category.title }}</h2>
+        <div class = "formulaire-review">
+            <h1 class="sign-in">Your favorite Category here:</h1>
+            <h2 class="sign-in2">{{ category.title }}</h2>
 
-        {% for article in category.articles %}
-{#            <p class="poke2"><img src="{{ category.image }}"></p>#}
-            <a href="{{ path('article_db_by_id', {id:article.id}) }}"> Lire votre article <i class="fa-solid fa-file-pen"></i> </a>
-        {% endfor %}
+            {% for article in category.articles %}
+                <div class ="form-examples">
+    {#            <p class="poke2"><img src="{{ category.image }}"></p>#}
+                    <a class="article-link-style" href="{{ path('article_db_by_id', {id:article.id}) }}"> Lire votre article <i class="fa-solid fa-file-pen"></i> </a>
+                </div>
+            {% endfor %}
+
+        </div>
     </main>
 {% endblock %}

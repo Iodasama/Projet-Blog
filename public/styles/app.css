@@ -730,7 +730,39 @@ section {
   font-size: larger;
 }
 
+.sign-in{
+  color:#dd3333;
+  font-weight: bold;
+}
 
+
+.sign-in2{
+  color:#dd3333;
+  font-weight: lighter;
+}
+
+.sign-in-button{
+  width: 100px;
+  height: 50px;
+  margin: 20px;
+  background-color: #de3333;
+  color: white;
+  border-radius: 25px;
+  border-color: transparent;
+}
+.sign-in-button:hover{
+  border: 1px solid red;
+  cursor: crosshair;
+  box-shadow: 12px 12px orange;
+  border-radius: 20px;
+}
+
+.fa-file-pen{
+  color: #de3333;
+}
+.article-link-style{
+  color: #3e3e3e;
+}
 
 
 
