@@ -740,6 +740,11 @@ section {
   color:#dd3333;
   font-weight: lighter;
 }
+.sign-in3{
+  color:#dd3333;
+  font-weight: bold;
+  text-align: center;
+}
 
 .sign-in-button{
   width: 100px;
@@ -762,6 +767,9 @@ section {
 }
 .article-link-style{
   color: #3e3e3e;
+}
+.fa-layer-group{
+  color: #de3333;
 }
 
 

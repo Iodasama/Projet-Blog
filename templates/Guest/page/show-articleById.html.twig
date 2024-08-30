@@ -5,21 +5,22 @@
 {% block content %}
     <!--symfony configure pour que cela parte directement depuis Templates donc  Page donc pas besoin de mettre templates pour le chemin meme si on cree le dossier Partial pour mettre sa base il faudra ecrire 'Partial/articles.html.twig' sans indiquer  templates {Pourcent extends "Page/base.html.twig" Pourcent} -->
     <main>
-        <h1>Your Article</h1>
+        <div class = "formulaire-review">
+            <h1 class="sign-in">Your favorite Article</h1>
 
-        {% if article and article.isPublished %}
-            <h1 class="poke">Your favorite article here:</h1>
-            <h1 class="poke2">{{ article.title }}</h1>
-            <img class="admin_image" src="{{ asset('images/'~article.image) }}">
-            <h1 class="poke2">{{ article.content }}</h1>
-            <h1 class="poke2">{{ article.description }}</h1>
+            {% if article and article.isPublished %}
+                <div class ="form-examples">
+                    <h1 class="sign-in2">{{ article.title }}</h1>
+                    <img class="admin_image" src="{{ asset('images/'~article.image) }}">
+                    <h1 class="poke2">{{ article.content }}</h1>
+                    <h1 class="poke2">{{ article.description }}</h1>
+                </div>
 
+    {#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Artcile</a>#}
+            {% else %}
+                <p class="poke">Your favorite article doesn't exist</p>
 
-{#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Artcile</a>#}
-        {% else %}
-            <p class="poke">Your favorite article doesn't exist</p>
-
-        {% endif %}
-
+            {% endif %}
+        </div>
     </main>
 {% endblock %}
