@@ -15,7 +15,11 @@
                     <a class="article-link-style" href="{{ path('article_db_by_id', {id:article.id}) }}"> Lire votre article <i class="fa-solid fa-file-pen"></i> </a>
                 </div>
             {% endfor %}
-
+        </div>
+        <div class = "formulaire-review">
+            <div class ="form-examples text-category-color">
+                <a class="text-category-color" href="{{ path('categories_list_db') }}">All your categories <i class="fa-solid fa-turn-down"></i></a>
+            </div>
         </div>
     </main>
 {% endblock %}

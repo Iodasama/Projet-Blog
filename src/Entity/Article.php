@@ -27,7 +27,7 @@ class Article
     private ?string $image = null;
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
-    #[ORM\JoinColumn(nullable: true, onDelete: "SET NULL")]
+    #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")]
     private ?Category $category = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
@@ -38,6 +38,10 @@ class Article
 
     #[ORM\Column]
     private ?bool $isPublished = null;
+
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")]
+    private ?User $user = null;
 
     // Permet de supprimer en "cascade"
     // les articles liés à une catégorie
@@ -150,6 +154,18 @@ class Article
     public function setIsPublished(bool $isPublished): static //bien verifier si la syntaxe du setter
     {
         $this->isPublished = $isPublished;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

@@ -623,6 +623,11 @@ section {
   padding:20px;
   margin-bottom: 70px;
 }
+.text-category-color{
+  color:#3e3e3e;
+  text-decoration:#3e3e3e ;
+  font-weight: bold;
+}
 
 .form-examples-categories {
   display: flex;

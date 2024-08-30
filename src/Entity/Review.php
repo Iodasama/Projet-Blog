@@ -31,8 +31,7 @@ class Review
     #[ORM\JoinColumn(nullable: false,onDelete: "CASCADE")] // on cascade si le book disparait les commentaires egalement
     private ?Book $book = null;
 
-    #[ORM\Column(length: 255,nullable: true)]
-    private ?string $pseudo = null;
+
 
     public function __construct() { // penser a bien le mettre sinon ca passe pas au niveau des dates quand on veut creer le review
 
@@ -104,15 +103,5 @@ class Review
         return $this;
     }
 
-    public function getPseudo(): ?string
-    {
-        return $this->pseudo;
-    }
 
-    public function setPseudo(string $pseudo): static
-    {
-        $this->pseudo = $pseudo;
-
-        return $this;
-    }
 }

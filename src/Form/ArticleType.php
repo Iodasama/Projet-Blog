@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Article;
 use App\Entity\Category;
+use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -29,6 +30,10 @@ class ArticleType extends AbstractType
             ->add('category', EntityType::class, [
                 'class' => Category::class,
 'choice_label' => 'id',
+            ])
+            ->add('user', EntityType::class, [
+                'class' => User::class,
+                'choice_label' => 'id',
             ])
             ->add('submit', SubmitType::class)
         ;
