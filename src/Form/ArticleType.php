@@ -23,6 +23,7 @@ class ArticleType extends AbstractType
             ->add('image', FileType::class, [
                 // demande à symfony de ne pas gérer automatiquement le champs image, je prends la main
                 'mapped' => false,
+                'required' => false, // pour update sans recharger image
             ])
             ->add('isPublished')
             ->add('category', EntityType::class, [

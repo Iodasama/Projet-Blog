@@ -8,6 +8,7 @@ use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -120,13 +121,14 @@ class AdminArticlesController extends AbstractController
     public function updateArticles(int $id, EntityManagerInterface $entityManager, Request $request, ArticleRepository $articleRepository,SluggerInterface $slugger, ParameterBagInterface $params): Response
     {
         $article = $articleRepository->find($id);
-
+        $existingImage = $article->getImage();
         $articleCreateForm = $this->createForm(ArticleType::class, $article);
         $articleCreateFormView = $articleCreateForm->createView();
 
         $articleCreateForm->handleRequest($request);
         if ($articleCreateForm->isSubmitted() && $articleCreateForm->isValid()) {
             $imageFile = $articleCreateForm->get('image')->getData();
+
             if ($imageFile) {
                 // je récupère le nom du fichier (ici mes images ont des noms de fichiers avec des lettres, tirets du 6,  et chiffres et extensions en .jpg)
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
@@ -154,17 +156,18 @@ class AdminArticlesController extends AbstractController
 
                 // je stocke dans la propriété image de l'entité article le nom du fichier
                 $article->setImage($newFilename);
+        } else {
+            // Si aucun fichier n'est uploadé, conserver l'image existante
+            $article->setImage($existingImage);
             }
-
-
             $article->setUpdatedAt(new \DateTime('NOW'));
             $entityManager->persist($article);
             $entityManager->flush(); //execution de la requete sql
             $this->addFlash('success', 'Article updated successfully');
+
         }
 
-
-
+        $articleCreateFormView = $articleCreateForm->createView();
         return $this->render('admin/page/update-articles.html.twig', ['articleForm' => $articleCreateFormView]);
 
 
