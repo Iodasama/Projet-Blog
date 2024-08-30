@@ -1,0 +1,41 @@
+{% extends "admin/base.html.twig" %}
+{% block content %}
+<main>
+    <h1>All users  </h1>
+    <table  id="myTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Pseudo</th>
+                <th> Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><p class="poke2">{{ user.id }}</p></td>
+                <td><p class="poke2">{{ user.email }}</p></td>
+                <td><p class="poke2">{{ user.pseudo}}</p></td>
+                <td>
+                    <p class="js-admin-article-delete">Suppress</p>
+                    <div class="admin-article-popup-delete">
+                        <p>Voulez vous vraiment supprimer ?</p>
+                        <a href="{{ path('delete_user', {id: user.id}) }}"><i class="fa-solid fa-trash-can green"></i></a>
+                    </div>
+                    <div class= "noDelete"> <p>Ne pas supprimer</p></div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
+<script>
+    let table = new DataTable('#myTable');
+</script>
+{% endblock %}
