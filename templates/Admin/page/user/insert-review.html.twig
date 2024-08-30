@@ -47,7 +47,7 @@
                     <p>Title : {{ review.title }} </p><br>
                     <p>{{ review.content }}</p>
                 </div>
-                <a href="{{ path('delete_review', {id: review.id}) }}">Suppress Review</a>
+                <a class="suppressReview-style" href="{{ path('delete_review', {id: review.id}) }}">Suppress Review<i class="fa-solid fa-trash-can green"></i></a>
             {% endfor %}
         </div>
     </div>

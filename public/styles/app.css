@@ -8,6 +8,9 @@
 
 /* on peut mettre aussi  src:url("../Font/pokemonFont/Pokemon Hollow.ttf") format('truetype')*/
 
+.suppressReview-style{
+  color: #1077b5;
+}
 
 .green {
   color: #1077b5;
@@ -310,7 +313,7 @@ footer {
   /*contain pour prendre plus de place*/
   width:100%;
   height: 60vh;
-  background-position: center bottom 44%;
+  background-position: center bottom 42%;
   background-size: cover;
   background-repeat: no-repeat;
   display:flex;
@@ -436,7 +439,7 @@ display: flex;
   border: 1px solid black;
   margin: 20px;
   background-color: #de3333;
-  color: white;
+ color: #0a0800;
   border-radius: 25px;
   text-align: center;
   padding-top: 10px;
@@ -448,6 +451,9 @@ display: flex;
   border-radius: 20px;
 }
 
+.a-maishu{
+  color:black;
+}
 .a-maishu:hover{ color:white}
 
 

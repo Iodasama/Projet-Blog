@@ -30,9 +30,9 @@
                         <td><h1 class="poke2">{{ category.id }}</h1></td>
                         <td><h1 class="poke2">{{ category.title }}</h1></td>
                         <td><h1 class="poke2">{{ category.createdAt |date("Y/m/d") }}</h1></td>
-                        <td><a href="{{ path('delete_category', {id:category.id}) }}">Suppress Your Category</a></td>
+                        <td><a class="suppressReview-style" href="{{ path('delete_category', {id:category.id}) }}">Suppress Your Category<i class="fa-solid fa-trash-can green"></a></td>
                         <td><p class=""><img class="admin_image" src="{{ asset('images/'~category.image) }}"></p></td>
-                        <td><a href="{{ path('category_db_by_id', {id:category.id}) }}">Go get Your Category</a></td>
+                        <td><a class="suppressReview-style" href="{{ path('category_db_by_id', {id:category.id}) }}">Get back to User Category<i class="fa-solid fa-layer-group"></a></td>
                     </tr>
                 </section>
             {% endfor %}
