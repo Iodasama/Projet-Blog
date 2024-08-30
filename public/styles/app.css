@@ -50,8 +50,8 @@ body {
 img {
   width:100%;
 }
-.poke2{
-
+.home-page-blog-pic{
+  border-radius: 25px;
 }
 .pic-title{width: 300px;
   position: relative}
@@ -299,9 +299,7 @@ a:hover{ color:red}
 /* */
 /*}*/
 
-.footer-image {
 
-}
 
 
 
@@ -319,6 +317,8 @@ footer {
   flex-direction: column;
   justify-content: end;
   align-items: center;
+  color:white;
+  font-size:large;
 }
 
 
@@ -594,7 +594,7 @@ section {
 
 }
 
-.bcblanc {
+.bgcblanc {
   background-color: white;
   width: 100%;
 

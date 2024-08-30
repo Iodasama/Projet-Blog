@@ -5,7 +5,7 @@
 {% block content %}
 <body>
     <main>
-        <section class="bcblanc">
+        <section class="bgcblanc">
             <article class="aPropos">
                 <div class="title">
                     <p id="test">A PROPOS</p>
@@ -40,7 +40,7 @@
 {#                   {#<h1 class="poke2" style="">{{ category.title }}</h1>#}
 
                     <div class="pic-title">
-                        <div class="poke2"><img src="{{ asset('images/'~category.image) }}" alt="pic_category"></div>
+                        <div class="poke2"><img class="home-page-blog-pic" src="{{ asset('images/'~category.image) }}" alt="pic_category"></div>
                         <a href="{{ path('category_db_by_id', {id:category.id}) }}"  style="text-decoration:none"><h1 class="poke3" style="">{{ category.title }}</h1></a>
                     </div>
 
@@ -116,7 +116,7 @@
 
 
         <div class="title">
-            <p id="test">GALERIE DE PHOTOS</p>
+            <p id="test3">GALERIE DE PHOTOS</p>
         </div>
 
         <section>
