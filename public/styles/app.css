@@ -31,7 +31,9 @@ body {
   padding-bottom: 100px;
   margin-left: 125px;
   display: flex;
+  /*flex-direction: column;*/
   justify-content: space-around;
+
   gap:50px;
 }
 
@@ -617,6 +619,19 @@ section {
   border-radius: 25px;
   background-color: #fefee5;
   width:800px;
+  box-shadow: 12px 12px #dd3333;
+  padding:20px;
+  margin-bottom: 70px;
+}
+
+.form-examples-categories {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border: 1px solid #dd3333;
+  border-radius: 25px;
+  background-color: #fefee5;
+  width: 1200px;
   box-shadow: 12px 12px #dd3333;
   padding:20px;
   margin-bottom: 70px;

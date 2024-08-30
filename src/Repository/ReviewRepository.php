@@ -22,7 +22,7 @@ class ReviewRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('r')
             ->orderBy('r.id', 'ASC')
-            ->setMaxResults(5)
+            ->setMaxResults(50)
             ->getQuery()
             ->getResult()
         ;
