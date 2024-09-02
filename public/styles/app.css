@@ -895,18 +895,6 @@ nav {
 @media only screen and (max-width: 880px) {
   /*------------------------------ Header ------------------------------*/
 
-
-  /*.button{*/
-  /*  display:none;*/
-  /*  top:550px;*/
-  /*  right:100px;*/
-  /*  width:8%;*/
-  /*  height: 130px;*/
-  /*  padding:0;*/
-  /*}*/
-
-
-
   .ul-user {
 
     flex-direction: column;
