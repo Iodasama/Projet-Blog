@@ -3,8 +3,18 @@
   padding:0;
   box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
+
+  /*border: 1px solid red;*/
+
+/*// Chaque élément aura une bordure rouge*!*!*/
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+/*// Cache les débordements horizontaux, mais utilisez avec prudence*/
+}
 
 /* on peut mettre aussi  src:url("../Font/pokemonFont/Pokemon Hollow.ttf") format('truetype')*/
 
@@ -28,17 +38,23 @@ i{
 
 body {
   background-color: #fefee5;
+
+  /*overflow-x: hidden;*/
 }
+
+
 .list-articles {
   padding-top: 50px;
   padding-bottom: 100px;
-  margin-left: 125px;
+  padding-right: 220px;
+  margin-left: 0;
   display: flex;
-  /*flex-direction: column;*/
   justify-content: space-around;
-
-  gap:50px;
+  gap:30px;
 }
+
+
+
 
 .article-category {
   display: flex;
@@ -46,8 +62,6 @@ body {
   flex-direction:column;
   align-items: center;
   width:70px;
-
-
 }
 
 img {
@@ -55,13 +69,28 @@ img {
 }
 .home-page-blog-pic{
   border-radius: 25px;
+  /*responsiveChat*/
+  width: auto; /* Assurez-vous que cela ne change pas les styles existants */
+  height: auto; /* Conserve le ratio d'aspect original */
+  max-width: 100%; /* Empêche l'image de déborder */
+  /*responsiveChat*/
+
 }
-.pic-title{width: 300px;
-  position: relative}
+.pic-title{
+  width: 300px;
+
+
+
+  /*responsiveChat*/
+  position: relative;
+text-align: center;
+  /*responsiveChat*/
+}
+
+
 
 .poke3{
   position:absolute;
-  top:0;
   color:#fdfde5;
   background-color: rgba(0, 0, 0, 0.65);
   transform: translate(-50%,-50%);
@@ -71,7 +100,12 @@ img {
   font-size: x-large;
   /*left:110px;*/
   /*top:70px;*/
+
+  text-shadow: 1px 1px 2px black;
+
+
 }
+
 
 
 
@@ -103,7 +137,7 @@ img {
 }
 
 .image {
-  top:380px;
+  top:310px;
   right: 400px;
   position: absolute;
   /*background-color: #5B21B6;*/
@@ -173,9 +207,9 @@ button:hover + .image, .image:hover {
   width: 100%;
 }
 .admin-article-table {}
-  /*display: flex;*/
-  /*flex-direction: row;*/
-  /*align-items: center;*/
+/*display: flex;*/
+/*flex-direction: row;*/
+/*align-items: center;*/
 
 
 .admin_image{
@@ -370,7 +404,8 @@ label {
 
 .title { display:flex;
   justify-content: center;
-  padding-top: 100px ;
+  padding-top: 40px ;
+  padding-bottom: 60px;
 
 }
 .text1 { display:flex;
@@ -426,11 +461,11 @@ label {
 }
 
 .text7{
-text-align: start;
-margin-left:18px;
-margin-top:40px;
-padding-bottom: 50px;
-display: flex;
+  text-align: start;
+  margin-left:18px;
+  margin-top:40px;
+  padding-bottom: 50px;
+  display: flex;
 }
 
 .buy-button{
@@ -439,7 +474,7 @@ display: flex;
   border: 1px solid black;
   margin: 20px;
   background-color: #de3333;
- color: #0a0800;
+  color: #0a0800;
   border-radius: 25px;
   text-align: center;
   padding-top: 10px;
@@ -553,7 +588,7 @@ display: flex;
 
 
 section {
-  width: 1000px;
+  width: 100%;
   margin:auto;
 }
 
@@ -589,9 +624,9 @@ section {
 }
 
 .item4 img:hover {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.5);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
 }
 
 
@@ -611,10 +646,23 @@ section {
   }
 }
 
+.bgcJaune {
+  background-color: #fdfde5;
+  width: 100%;
+
+
+  .aPropos2{
+    width: 70%;
+    margin: auto;
+  }
+}
+
 
 
 .owl-carousel {
-  padding-bottom: 50px;
+  padding-bottom: 60px;
+
+
 }
 
 .form-examples {
@@ -726,7 +774,7 @@ section {
 
 }
 .createUser {
- padding-top: 50px;
+  padding-top: 50px;
 }
 
 .review1 {
@@ -790,32 +838,469 @@ section {
   position: relative;
 }
 
-.newsletter-button {
-  position: absolute;
-  /*bottom:50%;*/
-  left:15%;
-  top:50%;
-  transform: translate(120%,120%);
-  color:white;
+.NL{
+  margin-left: 120px;
 }
-
 .newsletter-button-text {
-position: absolute;
-  /*bottom:50%;*/
-  color: #A9A9A9;
 
-  top:53%;
-  transform: translate(15%,60%);
+  color: #A9A9A9;
 }
 
 .admin_image2{
   width:300px;
-  position: absolute;
-  /*bottom:50%;*/
-  top:-15%;
-  left:15%;
-
-  transform: translate(120%,120%);
+  top: 20px;
 }
 
+/*@media (max-width: 768px) {*/
+/*  .list-articles {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*  }*/
+
+/*}*/
+nav {
+  padding: 1.5rem 2rem;
+  background-color: #222831;
+  color: #fff;
+}
+
+/* navbar button check avant ouverture */
+.checkbtn {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+.nav-mobile {
+  display: none;
+}
+#check:checked ~ .nav-mobile {
+  display: block;
+}
+
+.newsletter{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+
+}
+
+
+/*La requête média @media only screen est utilisée pour cibler uniquement les appareils qui utilisent un écran et exclure les appareils qui ne correspondent pas à cette spécification, comme les imprimantes ou les appareils qui lisent à partir de feuilles de style lorsqu'ils chargent le contenu mais ne le visualisent pas sur un écran. L'ajout du mot-clé only aide à éviter que les styles soient appliqués lorsqu'ils ne sont pas destinés à un environnement graphique d'écran. Le mot-clé only est utilisé pour améliorer la compatibilité avec les anciens navigateurs qui ne prennent pas en charge les requêtes média complètes. Si un navigateur ne comprend pas le mot-clé only, il ignorera toute la requête média. Voici comment je m'en suis servi pour mon projet :
+ */
+
+@media only screen and (max-width: 880px) {
+  /*------------------------------ Header ------------------------------*/
+
+
+  /*.button{*/
+  /*  display:none;*/
+  /*  top:550px;*/
+  /*  right:100px;*/
+  /*  width:8%;*/
+  /*  height: 130px;*/
+  /*  padding:0;*/
+  /*}*/
+
+
+
+  .ul-user {
+
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  /*navbar button check apres opuverture */
+
+  .checkbtn {
+    display: block;
+    font-size: 2rem;
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    color: red;
+  }
+  .nav-mobile {
+    top: 160px;
+    width: 100%;
+  }
+  .nav-mobile a {
+    font-size: 1.5rem;
+    padding: 2rem 3rem;
+  }
+
+  .header-guest {
+    display: flex;
+    flex-direction: column;
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  ul {
+    flex-direction: column;
+    line-height: 20px;
+    text-align: end;
+  }
+  .ul-user li:not(:last-child) a {
+    border-right: none;
+
+  }
+
+  /*Utilisation pratique*/
+  /*L'utilisation de only peut être particulièrement utile pour garantir que les feuilles de style ne soient pas interprétées par des appareils non prévus, tels que les lecteurs d'écran ou les imprimantes, où des styles spécifiques pourraient altérer négativement la sortie. Toutefois, avec les navigateurs modernes, la distinction entre @media screen et @media only screen est souvent moins critique, car la plupart des navigateurs modernes gèrent correctement les requêtes média.*/
+
+  /*Dans la pratique actuelle, @media only screen est souvent utilisé pour des raisons de prudence et pour maintenir une compatibilité claire avec tous les types de médias, alors que @media screen est généralement suffisant pour la plupart des besoins de conception web responsive.*/
+}
+
+
+/*td:nth-of-type(odd){*/
+/*  background-color: grey;*/
+/*}*/
+
+
+.newsletter-button{
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-pic{
+  margin-bottom: 40px;
+}
+
+/*checkbox-style*/
+
+input[type="checkbox"]{display:none;}
+input[type="checkbox"] + label::before{
+  content:"";
+  display:inline-block;
+  width:12px;
+  height:12px;
+  background:#222831;
+  border-radius:12px;
+}
+/*input[type="checkbox"]:checked + label::before{*/
+/*  background:#fefee5;*/
+/*}*/
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /*------------------------------ Header ------------------------------*/
+  .button{
+    top:450px;
+    right:400px;
+    width:8%;
+    padding:0;
+  }
+  .image {
+    top:400px;
+    right: 450px;
+  }
+
+/*  .button {*/
+/*    display:none;*/
+/*  }*/
+
+
+
+/*.image {*/
+/*  display:none;*/
+/*}*/
+
+}
+
+
+
+/*------------------------------ Body ------------------------------*/
+.list-articles {
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+
+  /*------------------------------ Body ------------------------------*/
+
+
+  .ul-user {
+
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button  {
+  display:none;}
+
+  .image{
+    top: 350px;
+    right:120px;
+    transform: translateX(0%);
+
+  }
+
+  section{
+    width:70%
+  }
+  .list-articles, .presentation {
+    flex-direction: column;
+    align-items: center;
+    /*padding: 0 20px; !* Adjust padding for smaller screens *!*/
+  }
+
+  .text5{
+    margin-right:20px ;
+  }
+
+  .item3 img, .item4 img {
+    width: 80%; /* Adjust image sizes for smaller screens */
+    margin-top: 20px;
+  }
+
+  .item2 {
+    padding-right: 40px;
+  }
+  .item4 {
+    padding-right: 40px;
+  }
+
+  .text7{
+    padding-left: 30px;
+  }
+
+  .newsletter, .bgcJaune, .bgcBlanc {
+    padding: 20px;
+    text-align: center; /* Center text in smaller views */
+  }
+
+  .NL{
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+
+  /*------------------------------ Header ------------------------------*/
+
+  .ul-user li a {
+    border-right: none;
+    font-size: small;
+  }
+
+  .button {
+display:none;
+  }
+
+.image {
+  top: 120px;
+  right:90px;
+  transform: translateX(0%);
+
+}
+
+
+
+  /*.button{*/
+
+  /*  top:400px;*/
+  /*  !*right:200px;*!*/
+  /*  width:8%;*/
+  /*  height: 130px;*/
+  /*  padding:0;*/
+  /*}*/
+  /*.image {*/
+  /*  top:300px;*/
+  /*  right: 75px;*/
+  /*}*/
+
+}
+
+
+
+
+
+
+/*responsive chatgpt*/
+/*@media (max-width: 1024px) { !* Pour tablette et mobile *!*/
+
+/*  .list-articles{*/
+
+/*  }*/
+/*  .list-articles, .section3, .presentation, .newsletter {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*  }*/
+
+/*  .list-articles .article-category, .section3 .item2, .presentation .item, .newsletter {*/
+/*    width: 100%;*/
+/*  }*/
+
+/*  .item3 img, .presentation .item4 img {*/
+/*    max-width: 100%;*/
+/*    height: auto;*/
+/*  }*/
+/*  .list-articles{*/
+/*    margin-left: 0*/
+
+/*  }*/
+
+/*  @media (max-width: 390px) { !* Ajustements spécifiques pour mobile *!*/
+/*    .item3 img, .presentation .item4 img {*/
+/*      width: 100%; !* Assure que les images remplissent l'espace disponible *!*/
+/*    }*/
+/*  }*/
+
+/*  !*responsive chatgpt*!*/
+
+
+/*@media (max-width: 768px) {*/
+
+/*  body, .main, .list-articles, .headerAdmin, .headerGuest {*/
+/*    padding: 0 10px; !* Ajoute un peu de padding pour éviter que le texte touche les bords *!*/
+/*    margin: 0 auto; !* Assure que tout est centré *!*/
+/*  }*/
+
+/*  .article-category, .pic-title,.newsletter-button , .newsletter-pic, .item4 img {*/
+/*    width: 100%; !* Utilise la pleine largeur pour ces éléments *!*/
+/*  }*/
+
+/*  .text1, .text2, .text3, .text4, .text5, .text6, .text7, .text8 {*/
+/*    padding: 0 10px; !* Ajoute du padding interne pour le texte *!*/
+/*  }*/
+
+/*  .list-articles {*/
+/*    margin-left: 0;*/
+/*  }*/
+
+/*  .home-page-blog-pic {*/
+/*    max-width: none; !* Permet à l'image de garder sa taille originale même sous 768px !* Supprime la restriction de max-width *!*/
+/*    width: 300px; !* Maintient la largeur fixe des images sur les petits écrans *!*/
+
+/*    flex-shrink: 0; !* Empêche l'image de rétrécir *!*/
+/*    margin-right: 10px; !* Ajoute un espace entre l'image et le titre *!*/
+/*  }*/
+
+
+/*  !* Ajustements mineurs si nécessaire, par exemple, ajuster la taille du texte *!*/
+/*  .poke3 {*/
+/*    font-size: 14px; !* Réduit la taille de police pour les écrans plus petits *!*/
+/*    white-space: nowrap; !* Empêche le titre de passer à la ligne *!*/
+
+/*    position: absolute;  !* Positionnement absolu pour le titre *!*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%); !* Centrage exact du titre *!*/
+
+
+/*  }*/
+
+/*  .pic-title {*/
+/*    display: flex; !* Utilisation de flexbox pour un contrôle plus facile *!*/
+/*    align-items: center; !* Centrage vertical des éléments *!*/
+/*    !*justify-content:  !* Alignement à gauche pour commencer le contenu à gauche *!*!*/
+/*    !*!*overflow-x: auto; !* Permet un défilement horizontal si nécessaire *!*!*!*/
+
+/*    position: relative; !* Position relative pour le conteneur pour positionner absolument le titre *!*/
+
+
+/*  }*/
+/*}*/
+/*}*/
+
+/*@media (max-width: 480px) {*/
+/*  body, .main {*/
+/*    padding: 0 5px; !* Réduit encore le padding pour les très petits écrans *!*/
+/*  }*/
+
+/*  .newsletter-button, .newsletter-pic {*/
+/*    transform: none; !* Annule toute transformation appliquée précédemment *!*/
+/*    padding: 0 5px;*/
+/*    margin: 0 auto; !* Centre les éléments *!*/
+/*  }*/
+/*}*/
+
+
+
+
+
+
+
 /*!*# sourceMappingURL=app.css.map *!*/
+
+/*!*responsive*!*/
+
+/*@media screen and (max-width: 768px) {*/
+/*  .list-articles {*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*  }*/
+/*}*/
+
+/*!*responsive*!*/
+
+/*@media screen and (max-width: 768px) {*/
+/*  .presentation {*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*  }*/
+
+
+
+/*!*# sourceMappingURL=app.css.map *!*/
+/*@media screen  and (max-width:768px) {*/
+
+
+
+
+  /*.nav{*/
+  /*  display: none;*/
+  /*}*/
+
+  /*.nav.active{*/
+  /*  display: flex;*/
+  /*  position: absolute;*/
+  /*  top:0;*/
+  /*  width:100%;*/
+  /*  left:0;*/
+  /*  height: 100vh;*/
+  /*  align-items: center;*/
+  /*  flex-direction: column;*/
+  /*  justify-content: space-evenly;*/
+  /*  background-color: aquamarine;*/
+  /*  padding: 150px 0 0 0;*/
+  /*  z-index:2000;*/
+  /*}*/
+
+
+
+
+
+
+
+
+/*@media screen and (max-width: 768px) {*/
+
+/* .list-articles {flex-direction: column;*/
+/*  align-items: flex-start;}*/
+
+
+/*}*/
+
+/*@media screen and (max-width: 460px) {*/
+/*  .list-articles{*/
+/*    flex-direction: row;*/
+/*    align-items: flex-end;*/
+/*  }*/
+/*  .pic-title{*/
+/*    display: none;*/
+/*  }*/
+/*}*/
