@@ -955,6 +955,7 @@ nav {
 .newsletter-button{
   display: flex;
   flex-direction: column;
+  color:white;
 }
 
 .newsletter-pic{
@@ -977,6 +978,25 @@ input[type="checkbox"] + label::before{
 /*}*/
 
 
+@media (min-width: 1024px) {
+
+  .button{
+    top:550px;
+    right:600px;
+    width:6%;
+    padding:0;
+  }
+  .image {
+    top:360px;
+    right: 400px;
+  }
+
+}
+
+.list-articles {
+  flex-direction: column;
+  align-items: center;
+}
 
 
 
@@ -984,14 +1004,14 @@ input[type="checkbox"] + label::before{
 
   /*------------------------------ Header ------------------------------*/
   .button{
-    top:450px;
+    top:750px;
     right:400px;
-    width:8%;
+    width:6%;
     padding:0;
   }
   .image {
-    top:400px;
-    right: 450px;
+    top:500px;
+    right: 300px;
   }
 
 /*  .button {*/
@@ -1014,7 +1034,7 @@ input[type="checkbox"] + label::before{
   align-items: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
 
 
   /*------------------------------ Body ------------------------------*/
