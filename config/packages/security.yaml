@@ -53,8 +53,8 @@ security:
     access_control:
         - { path: ^/admin/login$, roles: PUBLIC_ACCESS }
         - { path: ^/admin, roles: ROLE_ADMIN }
-#        Attention a la casse eviter majuscule admin non pas Admin
-        - { path: ^/profile, roles: ROLE_USER }
+    #Attention a la casse eviter majuscule admin non pas Admin
+#        - { path: ^/profile/, roles: ROLE_USER }
 
 when@test:
     security:

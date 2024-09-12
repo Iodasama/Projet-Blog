@@ -20,16 +20,15 @@ class ArticleType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('description')
-//            ->add('image') //si je souhaite image par url
+//            ->add('image') //si je souhaite ajouter une image par url
             ->add('image', FileType::class, [
-                // demande à symfony de ne pas gérer automatiquement le champs image, je prends la main
-                'mapped' => false,
-                'required' => false, // pour update sans recharger image
+                'mapped' => false,// je demande à symfony de ne pas gérer automatiquement le champs image, je prends la main
+                'required' => false, // pour update sans avoir à recharger l'image en gardant l'image déjà uploadée
             ])
             ->add('isPublished')
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-'choice_label' => 'id',
+                'choice_label' => 'id',
             ])
             ->add('user', EntityType::class, [
                 'class' => User::class,

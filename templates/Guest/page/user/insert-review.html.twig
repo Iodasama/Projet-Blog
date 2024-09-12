@@ -1,17 +1,15 @@
 {% extends "guest/base.html.twig" %}
+ {% block metatitle%} Create your Review - La Chine aux rayons X {% endblock %}
 {% block content %}
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+
+
 <div class = "formulaire-review">
-        <h1>Create Review</h1>
+        <h1>Write a Review</h1>
 
         <form action="" method="post" class="form-examples">
 
             <div class="form-example">
-                <label for="name">Commentaire objet:</label>
+                <label for="name">Title:</label>
                 <input type="text" name="title" id="title" required /> <!-- required oblige a remplir  -->
             </div>
 
@@ -28,8 +26,8 @@
             </div>
 
             <div class="form-example">
-                <label for="content">Enter your comment:  </label> {#            penser a mettre un label avec un textarea#}
-                <textarea id="content" name="content" rows="4" cols="50" placeholder="Write your message here"></textarea>
+                <label for="content">Enter your review:  </label> {#            penser a mettre un label avec un textarea#}
+                <textarea id="content" name="content" rows="4" cols="50" placeholder="Write your review here"></textarea>
 
             </div>
     {#        <div class="form-example">#}
@@ -37,7 +35,7 @@
     {#            <input type="email" name="email" id="email" required />#}
     {#        </div>#}
             <div class="form-example">
-                <input type="submit" value="Post your comment!" />
+                <input type="submit" value="Post your Review!" />
             </div>
 
         </form>
@@ -56,9 +54,13 @@
         </div>
     </div>
 
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
 
-
-    <a href="home">Accueil</a>
+{#    <a href="home">Accueil</a>#}
 
 
 {% endblock %}

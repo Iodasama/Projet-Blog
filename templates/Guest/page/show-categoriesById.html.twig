@@ -1,6 +1,7 @@
 {% extends "Guest/base.html.twig" %}
 
-{% block metatitle%} Get your article {% endblock %}
+{#{% block metatitle%} Get your category {% endblock %}#}
+{% block metatitle%} {{ category.title }} - La Chine aux rayons X {% endblock %}
 
 {% block content %}
     <!--symfony configure pour que cela parte directement depuis Templates donc  Page donc pas besoin de mettre templates pour le chemin meme si on cree le dossier Partial pour mettre sa base il faudra ecrire 'Partial/articles.html.twig' sans indiquer  templates {Pourcent extends "Page/base.html.twig" Pourcent} -->

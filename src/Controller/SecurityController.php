@@ -23,16 +23,16 @@ class SecurityController extends AbstractController
 
         if ($currentUser !==null && $this->isGranted('ROLE_USER')) {
             $this->addFlash('error', 'Error 403 Veuillez vous Login');
-    //           dd($currentUser);
-    //           $user= $entityManager->getRepository(User::class)->findOneBy(['id'=>$currentUser->getId()]);
-    //           dd($user); soit cette methode soit celle du getId ci dessous
-    //           $id= $currentUser->getId();
+            //           dd($currentUser);
+            //           $user= $entityManager->getRepository(User::class)->findOneBy(['id'=>$currentUser->getId()]);
+            //           dd($user); soit cette methode soit celle du getId ci dessous
+            //           $id= $currentUser->getId();
             return $this->redirectToRoute('home_page');
 
-    //           return $this->redirectToRoute('users_insert_review',['id'=>$id]);
-    //           si on souhaite mettre un id mais faille dans la sécurité du coup n importe quel user une fois connecté
-    //
-    //           si tu as le role USER alors redirection vers 'path'
+            //           return $this->redirectToRoute('users_insert_review',['id'=>$id]);
+            //           si on souhaite mettre un id mais faille dans la sécurité du coup n importe quel user une fois connecté
+            //
+            //           si tu as le role USER alors redirection vers 'path'
         }
 
         // get the login error if there is one
@@ -51,7 +51,7 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         $currentUser = $this->getUser();
-//        dd($currentUser);
+    //        dd($currentUser);
 
         if ($currentUser !== null && $this->isGranted('ROLE_ADMIN')) {
 //            $this->addFlash('error', 'Error 403 Veuillez vous Login');

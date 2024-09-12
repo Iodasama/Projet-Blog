@@ -53,6 +53,15 @@ body {
   gap:30px;
 }
 
+.list-articles2 {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  padding-right: 220px;
+  margin-left: 0;
+  display: flex;
+  justify-content: space-around;
+  gap:30px;
+}
 
 
 
@@ -158,7 +167,7 @@ button:hover + .image, .image:hover {
   right: 575px;
   border-radius: 10px;
   width:8%;
-  height: 65px;
+  height: auto;
   padding:10px;
   border: none;
   color: white;
@@ -594,7 +603,8 @@ section {
 
 .item img{
   width:100%;
-  height:150px;
+  height:180px;
+  /*pour regler la taille des images du carousel pour tout format*/
 }
 
 .item2 img{
@@ -661,8 +671,6 @@ section {
 
 .owl-carousel {
   padding-bottom: 60px;
-
-
 }
 
 .form-examples {
@@ -839,7 +847,8 @@ section {
 }
 
 .NL{
-  margin-left: 120px;
+  margin: 20px;
+  text-align: center;
 }
 .newsletter-button-text {
 
@@ -859,6 +868,7 @@ section {
 /*  }*/
 
 /*}*/
+
 nav {
   padding: 1.5rem 2rem;
   background-color: #222831;
@@ -868,7 +878,7 @@ nav {
 /* navbar button check avant ouverture */
 .checkbtn {
   font-size: 1.5rem;
-  color: white;
+  color: red;
   cursor: pointer;
 }
 .nav-mobile {
@@ -889,24 +899,90 @@ nav {
 }
 
 
-/*La requête média @media only screen est utilisée pour cibler uniquement les appareils qui utilisent un écran et exclure les appareils qui ne correspondent pas à cette spécification, comme les imprimantes ou les appareils qui lisent à partir de feuilles de style lorsqu'ils chargent le contenu mais ne le visualisent pas sur un écran. L'ajout du mot-clé only aide à éviter que les styles soient appliqués lorsqu'ils ne sont pas destinés à un environnement graphique d'écran. Le mot-clé only est utilisé pour améliorer la compatibilité avec les anciens navigateurs qui ne prennent pas en charge les requêtes média complètes. Si un navigateur ne comprend pas le mot-clé only, il ignorera toute la requête média. Voici comment je m'en suis servi pour mon projet :
- */
+/*td:nth-of-type(odd){*/
+/*  background-color: grey;*/
+/*}*/
 
-@media only screen and (max-width: 880px) {
-  /*------------------------------ Header ------------------------------*/
+/*Newsletter-style*/
+.newsletter-button{
+  display: flex;
+  flex-direction: column;
+  color:white;
+}
 
-  .ul-user {
+.newsletter-pic{
+  margin-bottom: 40px;
+}
 
-    flex-direction: column;
-    align-items: center;
+/*Menu Burger checkbox-style*/
+
+input[type="checkbox"]{display:none;}
+input[type="checkbox"] + label::before{
+  content:"";
+  display:inline-block;
+  width:12px;
+  height:12px;
+  background:#222831;
+  border-radius:12px;
+}
+/*option de visibilité du check-button*/
+/*input[type="checkbox"]:checked + label::before{*/
+/*  background:#fefee5;*/
+/*}*/
+
+
+/*Responsive pour MacBook Pro 1440x900*/
+/*@media (min-width: 1025px) {*/
+/*  .button{*/
+/*    top:550px;*/
+/*    right:600px;*/
+/*    width:6%;*/
+/*    padding:0;*/
+/*  }*/
+/*  .image {*/
+/*    top:360px;*/
+/*    right: 400px;*/
+/*  }*/
+/*}*/
+
+
+@media only screen and (max-width: 1241px) {
+  .form-examples {
+    width:90%;
+  }
+  .form-examples-categories {
+    width:90%;
+  }
+  .admin_image {
+    width: 80%;
+  }
+}
+
+
+/*Responsive pour Ipad pro Ipad Air*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-examples {
+    width:80%;
   }
 
+  <<</*------------------------------ Header ------------------------------*/
 
-  /*navbar button check apres opuverture */
+/*Au cas ou je souhaite modifier legerement l'espace accordé aux images du carousel, j'ai au prealable mis 100% a la width de ma  section et de la div de mon carousel et 100% a la width des images de mon carousel auxquelles j ai precisé une hauteur pour que ce soit la meme pour toutes les images de sources differentes pour que ce soit plus equilibré en matiere de design ' le reglage du pourcentage de la section dans le media query va permettre d ajuster selon les besoins ou la convenance*/
+
+  /*!*section{*!*/
+/*!*  !*width:90%;*!*!*/
+/*!*}*!*/
+
+.ul-user {
+  flex-direction: column;
+  align-items: center;
+}
+
+  /*navbar check-button on click */
 
   .checkbtn {
     display: block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
     top: 13px;
     left: 10px;
@@ -933,109 +1009,105 @@ nav {
   ul {
     flex-direction: column;
     line-height: 20px;
-    text-align: end;
+    text-align: center;
   }
   .ul-user li:not(:last-child) a {
     border-right: none;
-
   }
+  /*------------------------------ Header ------------------------------*/
+  .button {
+    top: 950px;
+    right:600px;
+    width: 10%;
+    height: auto;
+    padding: 0;
+  }
+
+  @keyframes glissement {
+    from {
+      margin-left: 40%;
+      width: 40%;
+      /*regle la longeur de glissement*/
+    }
+
+    to {
+      margin-left: 20%;
+      width: 5%;
+    }
+  }
+  .image {
+    top: 700px;
+    right: 420px;
+    transform: translateX(400%);
+  }
+
+  /*------------------------------ Body ------------------------------*/
+  .list-articles2 {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+  }
+
+  .list-articles, .presentation {
+    flex-direction: column;
+    align-items: center;
+    /*padding: 0 20px; !* Adjust padding for smaller screens *!*/
+  }
+  .form-examples-categories {
+    align-items: center;
+    width:90%;
+  }
+  .admin_image {
+    width: 80%;
+  }
+  .item2 {
+    padding-left: 140px;
+  }
+  .Review-style{
+    width:60%;
+  }
+  .review{
+    width:90%;
+  }
+  .review1{
+    width:90%;
+  }
+  .NL{
+    margin: 30px;
+    text-align: center;
+  }
+}
+
+/*La requête média @media only screen est utilisée pour cibler uniquement les appareils qui utilisent un écran et exclure les appareils qui ne correspondent pas à cette spécification, comme les imprimantes ou les appareils qui lisent à partir de feuilles de style lorsqu'ils chargent le contenu mais ne le visualisent pas sur un écran. L'ajout du mot-clé only aide à éviter que les styles soient appliqués lorsqu'ils ne sont pas destinés à un environnement graphique d'écran. Le mot-clé only est utilisé pour améliorer la compatibilité avec les anciens navigateurs qui ne prennent pas en charge les requêtes média complètes. Si un navigateur ne comprend pas le mot-clé only, il ignorera toute la requête média. Voici comment je m'en suis servi pour mon projet :
+ */
+
+
+
+/*Responsive pour Iphone14 pro Max Iphone12 pro et Iphone XR*/
+@media only screen  and (max-width: 767px) {
 
   /*Utilisation pratique*/
   /*L'utilisation de only peut être particulièrement utile pour garantir que les feuilles de style ne soient pas interprétées par des appareils non prévus, tels que les lecteurs d'écran ou les imprimantes, où des styles spécifiques pourraient altérer négativement la sortie. Toutefois, avec les navigateurs modernes, la distinction entre @media screen et @media only screen est souvent moins critique, car la plupart des navigateurs modernes gèrent correctement les requêtes média.*/
 
   /*Dans la pratique actuelle, @media only screen est souvent utilisé pour des raisons de prudence et pour maintenir une compatibilité claire avec tous les types de médias, alors que @media screen est généralement suffisant pour la plupart des besoins de conception web responsive.*/
-}
 
+  /*input[type="checkbox"] + label::before,*/
+  /*input[type="checkbox"] + label::after {*/
+  /*  transition: all 0.3s;*/
+  /*  display: block;*/
+  /*  content: '';*/
+  /*  width: 30px;*/
+  /*  height: 3px;*/
+  /*  background-color: red;*/
+  /*  margin: 6px auto;*/
+  /*}*/
+  /*input[type="checkbox"]:checked + label::before {*/
+  /*  transform: rotate(-45deg) translate(-5px, 6px);*/
+  /*}*/
 
-/*td:nth-of-type(odd){*/
-/*  background-color: grey;*/
-/*}*/
-
-
-.newsletter-button{
-  display: flex;
-  flex-direction: column;
-  color:white;
-}
-
-.newsletter-pic{
-  margin-bottom: 40px;
-}
-
-/*checkbox-style*/
-
-input[type="checkbox"]{display:none;}
-input[type="checkbox"] + label::before{
-  content:"";
-  display:inline-block;
-  width:12px;
-  height:12px;
-  background:#222831;
-  border-radius:12px;
-}
-/*input[type="checkbox"]:checked + label::before{*/
-/*  background:#fefee5;*/
-/*}*/
-
-
-@media (min-width: 1024px) {
-
-  .button{
-    top:550px;
-    right:600px;
-    width:6%;
-    padding:0;
-  }
-  .image {
-    top:360px;
-    right: 400px;
-  }
-
-}
-
-.list-articles {
-  flex-direction: column;
-  align-items: center;
-}
-
-
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
-  /*------------------------------ Header ------------------------------*/
-  .button{
-    top:750px;
-    right:400px;
-    width:6%;
-    padding:0;
-  }
-  .image {
-    top:500px;
-    right: 300px;
-  }
-
-/*  .button {*/
-/*    display:none;*/
-/*  }*/
-
-
-
-/*.image {*/
-/*  display:none;*/
-/*}*/
-
-}
-
-
-
-/*------------------------------ Body ------------------------------*/
-.list-articles {
-  flex-direction: column;
-  align-items: center;
-}
-
-@media only screen and (max-width: 767px) {
-
+  /*input[type="checkbox"]:checked + label::after {*/
+  /*  transform: rotate(45deg) translate(-5px, -6px);*/
+  /*}*/
 
   /*------------------------------ Body ------------------------------*/
 
@@ -1049,21 +1121,31 @@ input[type="checkbox"] + label::before{
   .button  {
   display:none;}
 
-  .image{
-    top: 350px;
-    right:120px;
+  .image {
+    top:270px;
+    right: 100px;
     transform: translateX(0%);
-
   }
 
   section{
     width:70%
   }
+  /*va regler l espace accordé aux images du carousel*/
+
   .list-articles, .presentation {
     flex-direction: column;
     align-items: center;
+
     /*padding: 0 20px; !* Adjust padding for smaller screens *!*/
   }
+
+  .list-articles2 {
+    margin-left: 215px;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1px;
+  }
+
 
   .text5{
     margin-right:20px ;
@@ -1091,150 +1173,102 @@ input[type="checkbox"] + label::before{
   }
 
   .NL{
-    margin-left: 10px;
+    margin: 10px;
+    text-align: center;
   }
-}
 
-@media only screen and (max-width: 390px) {
-
-  /*------------------------------ Header ------------------------------*/
-
-  .ul-user li a {
+  .ul-user li:not(:last-child) a {
     border-right: none;
-    font-size: small;
+  }
+  .form-examples {
+    width:300px;
+  }
+  .form-examples-categories {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+
+  }
+  .sign-in{
+    text-align: center
   }
 
-  .button {
-display:none;
+  /*.admin_image {*/
+  /*  width: 70%;*/
+  /*}*/
+  .Review-style{
+    width:60%;
   }
-
-.image {
-  top: 120px;
-  right:90px;
-  transform: translateX(0%);
+  .review{
+    width:80%;
+  }
+  .review1{
+    width:80%;
+  }
 
 }
 
+/*Responsive Iphone SE */
+/*@media only screen and (max-width: 389px) {*/
 
+/*  !*------------------------------ Header ------------------------------*!*/
 
-  /*.button{*/
+/*  .ul-user li a {*/
+/*    border-right: none;*/
+/*    font-size: small;*/
+/*  }*/
 
-  /*  top:400px;*/
-  /*  !*right:200px;*!*/
-  /*  width:8%;*/
-  /*  height: 130px;*/
-  /*  padding:0;*/
-  /*}*/
-  /*.image {*/
-  /*  top:300px;*/
-  /*  right: 75px;*/
-  /*}*/
+/*  .button {*/
+/*display:none;*/
+/*  }*/
 
-}
-
-
-
-
-
-
-/*responsive chatgpt*/
-/*@media (max-width: 1024px) { !* Pour tablette et mobile *!*/
-
-/*  .list-articles{*/
+/*  .image {*/
+/*    top: 80px;*/
+/*    right:90px;*/
+/*    transform: translateX(0%);*/
 
 /*  }*/
-/*  .list-articles, .section3, .presentation, .newsletter {*/
-/*    display: flex;*/
+
+/*  .item3 img, .item4 img {*/
+/*      width: 80%; !* Adjust image sizes for smaller screens *!*/
+/*      margin-top: 20px;*/
+/*  }*/
+/*  .ul-user li:not(:last-child) a {*/
+/*    border-right: none;*/
+/*  }*/
+/*.sign-in{*/
+/*  text-align: center*/
+/*}*/
+/*  .Review-style{*/
+/*    width:330px;*/
+/*  }*/
+/*  .review{*/
+/*    width:230px;*/
+/*  }*/
+/*  .review1{*/
+/*    width:230px;*/
+/*  }*/
+/*  .NL{*/
+/*    margin: 10px;*/
+/*    text-align: center;*/
+/*  }*/
+/*  .form-examples-categories {*/
+/*    display:flex;*/
 /*    flex-direction: column;*/
-/*  }*/
-
-/*  .list-articles .article-category, .section3 .item2, .presentation .item, .newsletter {*/
-/*    width: 100%;*/
-/*  }*/
-
-/*  .item3 img, .presentation .item4 img {*/
-/*    max-width: 100%;*/
-/*    height: auto;*/
-/*  }*/
-/*  .list-articles{*/
-/*    margin-left: 0*/
-
-/*  }*/
-
-/*  @media (max-width: 390px) { !* Ajustements spécifiques pour mobile *!*/
-/*    .item3 img, .presentation .item4 img {*/
-/*      width: 100%; !* Assure que les images remplissent l'espace disponible *!*/
-/*    }*/
-/*  }*/
-
-/*  !*responsive chatgpt*!*/
-
-
-/*@media (max-width: 768px) {*/
-
-/*  body, .main, .list-articles, .headerAdmin, .headerGuest {*/
-/*    padding: 0 10px; !* Ajoute un peu de padding pour éviter que le texte touche les bords *!*/
-/*    margin: 0 auto; !* Assure que tout est centré *!*/
-/*  }*/
-
-/*  .article-category, .pic-title,.newsletter-button , .newsletter-pic, .item4 img {*/
-/*    width: 100%; !* Utilise la pleine largeur pour ces éléments *!*/
-/*  }*/
-
-/*  .text1, .text2, .text3, .text4, .text5, .text6, .text7, .text8 {*/
-/*    padding: 0 10px; !* Ajoute du padding interne pour le texte *!*/
-/*  }*/
-
-/*  .list-articles {*/
-/*    margin-left: 0;*/
-/*  }*/
-
-/*  .home-page-blog-pic {*/
-/*    max-width: none; !* Permet à l'image de garder sa taille originale même sous 768px !* Supprime la restriction de max-width *!*/
-/*    width: 300px; !* Maintient la largeur fixe des images sur les petits écrans *!*/
-
-/*    flex-shrink: 0; !* Empêche l'image de rétrécir *!*/
-/*    margin-right: 10px; !* Ajoute un espace entre l'image et le titre *!*/
-/*  }*/
-
-
-/*  !* Ajustements mineurs si nécessaire, par exemple, ajuster la taille du texte *!*/
-/*  .poke3 {*/
-/*    font-size: 14px; !* Réduit la taille de police pour les écrans plus petits *!*/
-/*    white-space: nowrap; !* Empêche le titre de passer à la ligne *!*/
-
-/*    position: absolute;  !* Positionnement absolu pour le titre *!*/
-/*    top: 50%;*/
-/*    left: 50%;*/
-/*    transform: translate(-50%, -50%); !* Centrage exact du titre *!*/
-
-
-/*  }*/
-
-/*  .pic-title {*/
-/*    display: flex; !* Utilisation de flexbox pour un contrôle plus facile *!*/
-/*    align-items: center; !* Centrage vertical des éléments *!*/
-/*    !*justify-content:  !* Alignement à gauche pour commencer le contenu à gauche *!*!*/
-/*    !*!*overflow-x: auto; !* Permet un défilement horizontal si nécessaire *!*!*!*/
-
-/*    position: relative; !* Position relative pour le conteneur pour positionner absolument le titre *!*/
-
-
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width:250px;*/
+/*    margin-right: 60px;*/
 /*  }*/
 /*}*/
-/*}*/
 
-/*@media (max-width: 480px) {*/
-/*  body, .main {*/
-/*    padding: 0 5px; !* Réduit encore le padding pour les très petits écrans *!*/
-/*  }*/
 
-/*  .newsletter-button, .newsletter-pic {*/
-/*    transform: none; !* Annule toute transformation appliquée précédemment *!*/
-/*    padding: 0 5px;*/
-/*    margin: 0 auto; !* Centre les éléments *!*/
-/*  }*/
-/*}*/
+
+
+
+
 
 
 

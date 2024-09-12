@@ -2,7 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block metatitle %} {% endblock %}</title>
+    <!-- Titre optimisé pour chaque page -->
+    <title>{% block metatitle %}La Chine aux Rayons X : Analyses et Actualités{% endblock %}</title>
+{#    <title>{% block metatitle %} {% endblock %}</title> en comm car optmisation du SEO ci dessus#}
+    <!-- Meta description pour le SEO -->
+    <meta name="description" content="Explorez des analyses approfondies sur la Chine, sa culture et son actualité. Découvrez un nouveau regard sur les enjeux économiques et sociaux de la Chine.">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('Favicon/apple-touch-icon.png') }}">
 {#    Penser a mettre {{asset ('') pour le chemin  }}#}
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('Favicon/favicon-16x16.png') }}">

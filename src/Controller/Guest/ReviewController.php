@@ -47,7 +47,7 @@ class ReviewController extends AbstractController //commentaire test commit
                 // je lui place les valeurs que je veux (title, content)
                 $review->setTitle($title);
                 $review->setContent($content);
-                $review->setUser($this->getUser()); // obligatoire pour créer le review pour recuperer le pseudo si on ne l emet pas cela va mettre une valeur null et il faut bien une valeur
+                $review->setUser($this->getUser()); // obligatoire pour créer le review pour recuperer le pseudo si on ne le met pas cela va mettre une valeur null et il faut bien une valeur
                 $review->setBook($book);
 //                $review->setPseudo($pseudo);
 //                $review->setCreatedAt(new \DateTime('now'));
@@ -63,9 +63,9 @@ class ReviewController extends AbstractController //commentaire test commit
                 $this->addFlash('success', 'Review créé'); //je cree mon message flash
 
             } catch (\Exception $exception) {
-                $this->addFlash('error', $exception->getMessage());
+//                $this->addFlash('error', $exception->getMessage());
 //                 il faut éviter de renvoyer le message directement récupéré depuis les erreurs SQL
-//                $this->addFlash('error', 'error');
+                $this->addFlash('error', 'Veuillez Signup afin de vous Login pour pour créér un commentaire. ');
 
             }
         }

@@ -25,7 +25,6 @@ class AdminUserController extends AbstractController
             $email = $request->request->get('email');
             $password = $request->request->get('password');
             $pseudo = $request->request->get('pseudo'); // avec la methode Post la demande de création du user a été envoyée, je recupere les donnees POST
-
             $user = new User(); // on instancie une nouvelle classe User
 
             try {

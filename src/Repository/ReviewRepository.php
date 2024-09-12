@@ -21,8 +21,8 @@ class ReviewRepository extends ServiceEntityRepository
     public function findByReview(): array
     {
         return $this->createQueryBuilder('r')
-            ->orderBy('r.id', 'ASC')
-            ->setMaxResults(50)
+            ->orderBy('r.id', 'DESC')
+            ->setMaxResults(5)
             ->getQuery()
             ->getResult()
         ;

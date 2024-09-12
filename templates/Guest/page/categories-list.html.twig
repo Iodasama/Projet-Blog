@@ -1,13 +1,14 @@
 {% extends "Guest/base.html.twig" %}
 
-{% block metatitle%} Your articles page{% endblock %}
+
+{% block metatitle %} Your categories - La Chine aux Rayons X {% endblock %}
 
 {% block content %}
     <main>
         <div class = "formulaire-review">
             <div class ="form-examples-categories ">
             <h1 class="sign-in3">Your favorite Category is here</h1>
-            <section class="list-articles">
+            <section class="list-articles2">
             {% for category in categories %}
                 <div class ="form-examples">
                     <h1 class="sign-in" style="background-color: {{ category.color }}">{{ category.title }}</h1>

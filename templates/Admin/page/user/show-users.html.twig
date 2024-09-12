@@ -8,6 +8,7 @@
                 <th>Id</th>
                 <th>Email</th>
                 <th>Pseudo</th>
+                <th>Rôle</th>
                 <th> Actions</th>
             </tr>
         </thead>
@@ -17,6 +18,7 @@
                 <td><p class="poke2">{{ user.id }}</p></td>
                 <td><p class="poke2">{{ user.email }}</p></td>
                 <td><p class="poke2">{{ user.pseudo}}</p></td>
+                <td><p class="poke2">{{ user.roles|join(', ') }}</p></td>
                 <td>
                     <p class="js-admin-article-delete suppressReview-style">Suppress</p>
                     <div class="admin-article-popup-delete">
