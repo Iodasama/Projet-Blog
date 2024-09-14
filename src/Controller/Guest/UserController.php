@@ -40,7 +40,7 @@ class UserController extends AbstractController
                 $entityManager->flush(); // execution de la requete
 
                 $this->addFlash('success', 'User créé - 你好 cher User 👋 Bienvenue vous pouvez vous Login'); //je cree mon message flash
-
+                return $this->redirectToRoute('app_login');
             } catch (\Exception $exception) {
                 // $this->addFlash('error', $exception->getMessage()); il faut éviter de renvoyer le message directement récupéré depuis les erreurs SQL
                 $this->addFlash('error', 'error');

@@ -7,7 +7,11 @@ La méthode de déploiement recommandé par Symfony est la méthode de déploiem
 manuellement, en lançant les commandes en SSH, en clonant les données d'un dépôt GIT externe
 
 En résumé, pour déployer une application Symfony il faut :
-S’assurer que les versions de Apache, PHP, MySQL, Composer et Git sont compatibles (via symfony check:requirements qui permet de vérifier si les prérequis techniques (comme la version de PHP et les extensions nécessaires) sont respectés pour exécuter une application Symfony. Cependant pour Apache, MySQL, Composer et Git il faut vérifier manuellement ).
+S’assurer que les versions de Apache, PHP, MySQL, Composer et Git sont Òcompatibles (via symfony check:requirements qui permet de vérifier si les prérequis techniques (comme la version de PHP et les extensions nécessaires) sont respectés pour exécuter une application Symfony. Cependant pour Apache, MySQL, Composer et Git il faut vérifier manuellement :
+Apache : apache2 -v ou httpd -v
+MySQL : mysql --version
+Composer : composer --version
+Git : git --version).
 Se connecter en SSH au serveur.
 Se placer dans le dossier qui va contenir l'application puis récupérer les fichiers de notre projet avec un git clone.
 Installer les dépendances du projet avec Composer. S’il y a des erreurs, alors il est recommandé d’essayer en configurant d'abord l'application puis en installant les dépendances.
@@ -18,7 +22,7 @@ Enfin si l'application a une base de données, il peut être nécessaire de cré
 1. Préparation de l'Application en Local : nettoyage des fichiers inutiles.
 
 2. Configuration du Serveur Mutualisé : vérification des versions des différents modules. La plupart des  logiciels qui peuvent être utilisés dans l'écosystèmes Symfony sont installés nativement chezO2Switch :
-   Composer est installé nativement, en version 2. Pour installer et utiliser composer, un accès SSH est fortement conseillé. Il s’agit d’ajouter notre IP à la liste des IPs autorisées à se connecter en SSH au serveur via Autorisation SSH de O2switch.
+   Composer est installé nativement, en version 2. Pour installer et utiliser composer, un accès SSH est fortement conseillé. Il s’agit d’ajouter notre IP à la liste des IPs autorisées à se connecter en SSH au serveur via Autorisation SSH de O2switch.
    Php est installé nativement néanmoins il est possible de sélectionner une autre version via le sélecteur de version.
    Git est installé nativement. Si cela passe par SSH, bien penser à autoriser l'accès via l’outil de liste blanche (connexion entrante & sortante).
 

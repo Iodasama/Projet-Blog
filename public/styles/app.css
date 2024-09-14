@@ -957,7 +957,10 @@ input[type="checkbox"] + label::before{
     width: 80%;
   }
 }
-
+ /*Essai responsive cadrage img*/
+/*@media (min-width: 1700px) {*/
+/*  .item2 img { left:50px;*/
+/*}*/
 
 /*Responsive pour Ipad pro Ipad Air*/
 @media (min-width: 768px) and (max-width: 1024px) {
