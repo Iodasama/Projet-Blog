@@ -957,6 +957,8 @@ input[type="checkbox"] + label::before{
     width: 80%;
   }
 }
+
+.fa-solid{margin-left: 10px}
  /*Essai responsive cadrage img*/
 /*@media (min-width: 1700px) {*/
 /*  .item2 img { left:50px;*/
