@@ -14,14 +14,19 @@
                 <div class ="form-examples">
                     <h1 class="sign-in2">{{ article.title }}</h1>
                     <img class="admin_image" src="{{ asset('images/'~article.image) }}">
-                    <h1 class="poke2">{{ article.content }}</h1>
-                    <h1 class="poke2">{{ article.description }}</h1>
+                    <h3 class="poke2">{{ article.description }}</h3>
+                    <p class="poke2">{{ article.content }}</p>
                 </div>
 
     {#            <a href="{{ path('article_update', {id:article.id}) }}">Update Your Artcile</a>#}
             {% else %}
                 <p class="poke">Your favorite article doesn't exist</p>
             {% endif %}
+        </div>
+        <div class = "formulaire-review">
+            <div class ="form-examples text-category-color">
+                <a class="text-category-color" href="{{ path('categories_list_db') }}">All your categories <i class="fa-solid fa-turn-down"></i></a>
+            </div>
         </div>
     </main>
 {% endblock %}

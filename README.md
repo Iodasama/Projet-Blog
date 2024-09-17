@@ -1,5 +1,7 @@
 # Projet-Blog
 
+Déploiement O2switch 
+
 Il existe plusieurs types de serveur en fonction de l’importance de l’application (et des coûts associés) : mutualisé, dédié ou un VPS (Virtual Private Server).
 Nous optons pour un serveur mutualisé (cas d’O2Switch) qui est généralement configuré avec PHP, Apache, Mysql, Composer et Git.
 

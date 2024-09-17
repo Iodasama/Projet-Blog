@@ -41,7 +41,7 @@ class ReviewController extends AbstractController //commentaire test commit
 //            $pseudo = $request->request->get('pseudo'); // pas besoin car je passe par la FK de User pour recuperer le pseudo
                 // avec la methode Post la demande de création du user a été envoyée, je recupere les donnees POST
 
-            $review = new Review(); // instancie une nouvelle classe User
+            $review = new Review(); // instancie une nouvelle classe Review
 
             try {
                 // je lui place les valeurs que je veux (title, content)

@@ -9,7 +9,7 @@
                 <th>Email</th>
                 <th>Pseudo</th>
                 <th>Rôle</th>
-                <th> Actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,8 +22,7 @@
                 <td>
                     <p class="js-admin-article-delete suppressReview-style">Suppress</p>
                     <div class="admin-article-popup-delete">
-                        <p>Voulez vous vraiment supprimer ?</p>
-                        <a href="{{ path('delete_user', {id: user.id}) }}"><i class="fa-solid fa-trash-can green"></i></a>
+                        <p>Voulez vous vraiment supprimer ? <a href="{{ path('delete_user', {id: user.id}) }}"><i class="fa-solid fa-trash-can green"></i></a></p>
                     </div>
                     <div class= "noDelete "> <p>Ne pas supprimer</p></div>
                 </td>

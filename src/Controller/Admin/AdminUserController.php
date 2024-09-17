@@ -46,7 +46,8 @@ class AdminUserController extends AbstractController
 
 
                 $this->addFlash('success', 'User créé'); //je cree mon message flash
-
+                // Redirection vers la page qui affiche la liste des utilisateurs
+                return $this->redirectToRoute('show_users');
             } catch (\Exception $exception) {
                 // $this->addFlash('error', $exception->getMessage()); il faut éviter de renvoyer le message directement récupéré depuis les erreurs SQL
 //dd($exception->getMessage());
@@ -54,7 +55,7 @@ class AdminUserController extends AbstractController
             }
         }
 
-        return $this->render('admin/page/user/insert_user.html.twig'); // je retourne le formulaire
+        return $this->render('Admin/page/user/insert_user.html.twig'); // je retourne le formulaire
     }
     #[Route('/admin/show-users', name: 'show_users')]
     public function adminShowUsers(userRepository $userRepository): Response //Response pour le typage
@@ -67,7 +68,7 @@ class AdminUserController extends AbstractController
     #[Route('/admin/delete-user/{id}', name: 'delete_user')]
     public function deleteUser(int $id, userRepository $userRepository, EntityManagerInterface $entityManager): Response
     {
-//        $users = $userRepository->findAll();
+        //$users = $userRepository->findAll();
         $user = $userRepository->find($id);
 
         if (!$user) {
@@ -82,7 +83,7 @@ class AdminUserController extends AbstractController
         } catch (\Exception $exception) {
             return $this->renderView('Admin/page/errormessage.html.twig', ['errorMessage' => $exception->getMessage()]);
         }
-        return $this->redirectToRoute('Admin/page/user/show-users.html.twig'); //bien mettre le name du path ici admin_articles_list_db non pas
+        return $this->redirectToRoute('show_users');
     }
 }
 

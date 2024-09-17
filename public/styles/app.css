@@ -96,6 +96,7 @@ text-align: center;
   /*responsiveChat*/
 }
 
+.poke2{ text-align: justify}
 
 
 .poke3{
@@ -807,6 +808,7 @@ section {
   color:#dd3333;
   font-weight: lighter;
 }
+
 .sign-in3{
   color:#dd3333;
   font-weight: bold;
@@ -869,13 +871,14 @@ section {
 
 /*}*/
 
+/*nav user et admin*/
 nav {
   padding: 1.5rem 2rem;
   background-color: #222831;
   color: #fff;
 }
 
-/* navbar button check avant ouverture */
+/* Menu Burger navbar button check avant ouverture */
 .checkbtn {
   font-size: 1.5rem;
   color: red;
@@ -887,6 +890,7 @@ nav {
 #check:checked ~ .nav-mobile {
   display: block;
 }
+/* Menu Burger navbar button check avant ouverture */
 
 .newsletter{
 
@@ -916,8 +920,8 @@ nav {
 
 /*Menu Burger checkbox-style*/
 
-input[type="checkbox"]{display:none;}
-input[type="checkbox"] + label::before{
+input.menu-checkbox {display:none;}
+input.menu-checkbox + label::before{
   content:"";
   display:inline-block;
   width:12px;
@@ -929,6 +933,8 @@ input[type="checkbox"] + label::before{
 /*input[type="checkbox"]:checked + label::before{*/
 /*  background:#fefee5;*/
 /*}*/
+
+/*Menu Burger checkbox-style*/
 
 
 /*Responsive pour MacBook Pro 1440x900*/
@@ -958,19 +964,21 @@ input[type="checkbox"] + label::before{
   }
 }
 
+/*Ajustement lien icon  */
 .fa-solid{margin-left: 10px}
+
  /*Essai responsive cadrage img*/
 /*@media (min-width: 1700px) {*/
 /*  .item2 img { left:50px;*/
 /*}*/
 
-/*Responsive pour Ipad pro Ipad Air*/
+/*Responsive pour Ipad pro (portrait et paysage), les tablettes en mode paysage et certains petits ordinateurs portables.*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .form-examples {
     width:80%;
   }
 
-  <<</*------------------------------ Header ------------------------------*/
+  /*------------------------------ Header ------------------------------*/
 
 /*Au cas ou je souhaite modifier legerement l'espace accordé aux images du carousel, j'ai au prealable mis 100% a la width de ma  section et de la div de mon carousel et 100% a la width des images de mon carousel auxquelles j ai precisé une hauteur pour que ce soit la meme pour toutes les images de sources differentes pour que ce soit plus equilibré en matiere de design ' le reglage du pourcentage de la section dans le media query va permettre d ajuster selon les besoins ou la convenance*/
 
@@ -1083,10 +1091,9 @@ input[type="checkbox"] + label::before{
   }
 }
 
+
 /*La requête média @media only screen est utilisée pour cibler uniquement les appareils qui utilisent un écran et exclure les appareils qui ne correspondent pas à cette spécification, comme les imprimantes ou les appareils qui lisent à partir de feuilles de style lorsqu'ils chargent le contenu mais ne le visualisent pas sur un écran. L'ajout du mot-clé only aide à éviter que les styles soient appliqués lorsqu'ils ne sont pas destinés à un environnement graphique d'écran. Le mot-clé only est utilisé pour améliorer la compatibilité avec les anciens navigateurs qui ne prennent pas en charge les requêtes média complètes. Si un navigateur ne comprend pas le mot-clé only, il ignorera toute la requête média. Voici comment je m'en suis servi pour mon projet :
  */
-
-
 
 /*Responsive pour Iphone14 pro Max Iphone12 pro et Iphone XR*/
 @media only screen  and (max-width: 767px) {
@@ -1187,6 +1194,8 @@ input[type="checkbox"] + label::before{
   }
   .form-examples {
     width:300px;
+    /*pour centrer l'image de l'article*/
+    align-items: center;
   }
   .form-examples-categories {
     display:flex;
@@ -1213,7 +1222,24 @@ input[type="checkbox"] + label::before{
     width:80%;
   }
 
+  /*pour centrer le titre de l'article*/
+  .sign-in2{
+   text-align: center;
+  }
+  /*pour centrer la description et le content de l'article*/
+  .poke2{
+    text-align: center;
+  }
+
+
+
 }
+
+
+
+
+
+
 
 /*Responsive Iphone SE */
 /*@media only screen and (max-width: 389px) {*/

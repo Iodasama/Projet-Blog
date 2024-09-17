@@ -31,9 +31,9 @@ class AdminReviewController extends AbstractController //commentaire test commit
 
             $book = $bookRepository->find($request->request->get('book_id'));
             $title = $request->request->get('title');
-            $content = $request->request->get('content'); // avec la methode Post la demande de création du user a été envoyée, je recupere les donnees POST
+            $content = $request->request->get('content'); // avec la methode Post la demande de création du Review a été envoyée, je recupere les donnees POST
 
-            $review = new Review(); // instancie une nouvelle classe User
+            $review = new Review(); // instancie une nouvelle classe Review
 
             try {
                 // je lui place les valeurs que je veux (title, content)

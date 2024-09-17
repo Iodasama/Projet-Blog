@@ -19,6 +19,7 @@ class HomeController extends AbstractController
 //        dd (vars :'test');
 
     }
+}
 //    #[Route('/admin/categories-list-db', name: 'admin_categories_list_db')]
 //    //Je cree la route, je lui passe le nom de admin_articles_list_db
 //    public function adminListCategoriesFromDb(categoryRepository $categoryRepository): Response //Response pour le typage
@@ -33,7 +34,7 @@ class HomeController extends AbstractController
 //        //la variable categories contient la variable $categories
 //    }
 
-}
+
 
 
 

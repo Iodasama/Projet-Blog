@@ -1,6 +1,5 @@
 const deleteArticleButtons = document.querySelectorAll('.js-admin-article-delete')
-
-// je recupere tous les elements qui ont la classe js-admin-article-delete (que je leur ai donné au prealable dans mon fichier twig, dans la boucle for pour que cela s'applique a tous mes articles°
+// je recupere tous les elements qui ont la classe js-admin-article-delete (que je leur ai donné au préalable dans mon fichier twig, dans la boucle for pour que cela s'applique à tous mes articles°
 
 // console.log('test') console.log(deleteArticleButtons);  je teste si tout fonctionne avec deux console log, une fois que cela s'affiche en console log je poursuis
 
@@ -32,7 +31,5 @@ deleteArticleButtons.forEach((deleteArticleButton) => {
             // au clic  le bouton de suppression  reapparait, la premiere pop up et le bouton ne pas supprimer sous forme de pop up disparaissent
 
         })
-
-
     });
 })
