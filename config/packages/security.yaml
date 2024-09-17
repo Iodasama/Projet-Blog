@@ -27,6 +27,11 @@ security:
                 enable_csrf: true
                 default_target_path: app_admin_login
 
+            logout:
+                path: app_admin_logout
+                target: app_admin_login # Redirection après la déconnexion
+
+
         main:
             lazy: true
             provider: app_user_provider

@@ -9,7 +9,7 @@ La méthode de déploiement recommandé par Symfony est la méthode de déploiem
 manuellement, en lançant les commandes en SSH, en clonant les données d'un dépôt GIT externe
 
 En résumé, pour déployer une application Symfony il faut :
-S’assurer que les versions de Apache, PHP, MySQL, Composer et Git sont Òcompatibles (via symfony check:requirements qui permet de vérifier si les prérequis techniques (comme la version de PHP et les extensions nécessaires) sont respectés pour exécuter une application Symfony. Cependant pour Apache, MySQL, Composer et Git il faut vérifier manuellement :
+S’assurer que les versions de Apache, PHP, MySQL, Composer et Git sont compatibles (via symfony check:requirements qui permet de vérifier si les prérequis techniques (comme la version de PHP et les extensions nécessaires) sont respectés pour exécuter une application Symfony. Cependant pour Apache, MySQL, Composer et Git il faut vérifier manuellement :
 Apache : apache2 -v ou httpd -v
 MySQL : mysql --version
 Composer : composer --version
@@ -34,7 +34,7 @@ git clone https://github.com/Iodasama/Projet-Blog.git
 
 3. Gestion des dépendances : Maintenant que notre code a été déployé, il faut  installer les dépendances PHP du projet, avec l'aide de Composer. Pour cela, il suffit d’exécuter la commande « composer install » et composer se chargera de télécharger toutes les dépendances de notre projet, listées dans le fichier composer.json qui définit la liste des dépendances nécessaires au bon fonctionnement du projet.
    En complément, la ligne de commande composer install --no-dev —optimize-autoloader permet de ne pas installer les dépendances de développement (comme le profiler) ce qui est recommandé pour un environnement de production:
-   Fonctionnement de --optimize-autoloader
+   Fonctionnement de --optimize-autoloader:
    Par défaut, Composer génère un autoloader standard qui utilise un mécanisme de recherche pour localiser les fichiers des classes lorsque vous les chargez. Cette recherche implique de vérifier les namespaces et les chemins de fichier correspondants pour chaque classe, ce qui peut être lent, surtout lorsque vous avez de nombreuses dépendances ou un grand nombre de classes dans votre projet. Avec l'option —optimize-autoloader, Composer va pré-générer une carte de toutes les classes et de leurs chemins respectifs dans un fichier spécifique. Cela permet de réduire la nécessité de recherches dynamiques, car l'autoloader saura directement où se trouvent les fichiers des classes, ce qui permet un chargement beaucoup plus rapide en production.
 4. Configuration de l'environnement de production (de l’application) : en mettant à jour le fichier .env qui se situe à la racine du projet mais comme nous l’avons vu nous avons fait une copie le fichier « .env.local », c’est lui qui contient les données de la base de données etc. et il n’est donc pas versionné. Il faudra donc le re-créer et y inscrire notamment les informations de la base de données à utiliser sur le serveur de production:
    La configuration des variables d'environnement nécessaires dans le env.local : `APP_ENV`= prod et APP_DEBUG=0  ainsi que les paramètres de la base données le DATABASE_URL et enfin le code du APP_SECRETS)

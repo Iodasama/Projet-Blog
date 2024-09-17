@@ -86,6 +86,13 @@ class SecurityController extends AbstractController
             'error' => $error,
         ]);
     }
+// Route de déconnexion pour les administrateurs
+    #[Route(path: '/admin/logout', name: 'app_admin_logout')]
+    public function adminLogout(): void
+    {
+        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
+
 
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void
