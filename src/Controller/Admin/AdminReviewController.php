@@ -40,6 +40,7 @@ class AdminReviewController extends AbstractController //commentaire test commit
                 $review->setTitle($title);
                 $review->setContent($content);
 //                $review->setUser($user);
+                $review->setUser($this->getUser()); // obligatoire pour créer le review pour recuperer le pseudo si on ne le met pas cela va mettre une valeur null et il faut bien une valeur
                 $review->setBook($book);
 //                $review->setCreatedAt(new \DateTime('now'));
 

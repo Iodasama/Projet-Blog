@@ -47,7 +47,7 @@ class ReviewController extends AbstractController //commentaire test commit
                 // je lui place les valeurs que je veux (title, content)
                 $review->setTitle($title);
                 $review->setContent($content);
-                $review->setUser($this->getUser()); // obligatoire pour créer le review pour recuperer le pseudo si on ne le met pas cela va mettre une valeur null et il faut bien une valeur
+                $review->setUser($this->getUser()); // Associe l'utilisateur connecté à la revue. Nécessaire pour lier chaque revue à un utilisateur et éviter que la relation soit nulle.// obligatoire pour créer le review pour recuperer le pseudo si on ne le met pas cela va mettre une valeur null et il faut bien une valeur
                 $review->setBook($book);
 //                $review->setPseudo($pseudo);
 //                $review->setCreatedAt(new \DateTime('now'));
