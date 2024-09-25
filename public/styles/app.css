@@ -148,11 +148,11 @@ text-align: center;
 
 .image {
   top:310px;
-  right: 400px;
+  right: 640px;
   position: absolute;
   /*background-color: #5B21B6;*/
   width:190px;
-  transform: translateX(350%);/*** DESCENTE SI Y - DROITE SI X  ***/
+  transform: translateX(450%);/*** DESCENTE SI Y - DROITE SI X  ***/
   transition: transform 1s ease;
 
 }
@@ -164,8 +164,8 @@ button:hover + .image, .image:hover {
 
 .button {
   position:absolute;
-  top:550px;
-  right: 575px;
+  top:650px;
+  right: 675px;
   border-radius: 10px;
   width:8%;
   height: auto;
