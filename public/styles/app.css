@@ -951,6 +951,7 @@ input.menu-checkbox + label::before{
   background:#222831;
   border-radius:12px;
 }
+
 /*option de visibilité du check-button*/
 /*input[type="checkbox"]:checked + label::before{*/
 /*  background:#fefee5;*/
@@ -974,7 +975,78 @@ input.menu-checkbox + label::before{
 /*}*/
 
 
+/*Ajustement lien icon  */
+.fa-solid{margin-left: 10px}
+
+ /*Essai responsive cadrage img*/
+/*@media (min-width: 1700px) {*/
+/*  .item2 img { left:50px;*/
+/*}*/
+
+.header-nav-user {
+
+  padding: 1.5rem 2rem;
+  background-color: #222831;
+  color: #fff;
+
+}
+
+@media (min-width: 1242px) {
+  .nav-mobile {
+    display: block;
+  }
+  nav {
+    padding:1.5rem 2rem;;
+    background-color:white;
+    color:red;
+  }
+  .checkbtn {
+    font-size:0;
+    color: transparent;
+    cursor: none;
+  }
+  ul li a {
+    color:white;
+    text-decoration: white;
+  }
+
+  ul {
+    list-style: none;
+    display:flex;
+    justify-content: space-evenly;
+  }
+
+  a:hover{ color:red}
+
+  .ul-user {
+    color: white;
+    list-style: none;
+
+    display: flex;
+    padding: 0;
+  }
+
+  .ul-user li a {
+    padding: 0 1rem;
+  }
+
+
+  .ul-user li:not(:last-child) a {
+    border-right: 1px solid red;
+  }
+
+  input.menu-checkbox {display:none;}
+  input.menu-checkbox + label::before{
+
+    display:none;
+
+  }
+
+}
+
+
 @media only screen and (max-width: 1241px) {
+
   .form-examples {
     width:90%;
   }
@@ -984,16 +1056,8 @@ input.menu-checkbox + label::before{
   .admin_image {
     width: 80%;
   }
+
 }
-
-/*Ajustement lien icon  */
-.fa-solid{margin-left: 10px}
-
- /*Essai responsive cadrage img*/
-/*@media (min-width: 1700px) {*/
-/*  .item2 img { left:50px;*/
-/*}*/
-
 /*Responsive pour Ipad pro (portrait et paysage), les tablettes en mode paysage et certains petits ordinateurs portables.*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .form-examples {
@@ -1011,6 +1075,8 @@ input.menu-checkbox + label::before{
 .ul-user {
   flex-direction: column;
   align-items: center;
+  margin-left: -2px;
+  margin-top: -4px;
 }
 
   /*navbar check-button on click */
@@ -1143,8 +1209,17 @@ input.menu-checkbox + label::before{
   /*  transform: rotate(45deg) translate(-5px, -6px);*/
   /*}*/
 
-  /*------------------------------ Body ------------------------------*/
 
+
+  /*------------------------------ Header ------------------------------*/
+
+  .admin-ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+  }
 
   .ul-user {
 
@@ -1155,6 +1230,7 @@ input.menu-checkbox + label::before{
   .button  {
   display:none;}
 
+  /*------------------------------ Body ------------------------------*/
   .image {
     top:270px;
     right: 100px;
