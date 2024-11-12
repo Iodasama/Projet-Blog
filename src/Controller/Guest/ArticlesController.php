@@ -4,13 +4,13 @@ declare(strict_types=1); // pour etre sur de l'affichage permet de reperer les e
 namespace App\Controller\Guest;
 
 
-use App\Entity\Article;
-use App\Form\ArticleType;
+//use App\Entity\Article; pas de creation ou update ou suppress
+//use App\Form\ArticleType; pas de creation ou update ou suppress
 use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
-use Doctrine\ORM\EntityManagerInterface;
+//use Doctrine\ORM\EntityManagerInterface; pas de creation ou update ou suppress pas besoin de Doctrine
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+//use Symfony\Component\HttpFoundation\Request;  pas besoin  parce qu on  n’interagit pas avec des données envoyées via des requêtes HTTP spécifiques (comme des formulaires ou des paramètres envoyés en POST).
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 

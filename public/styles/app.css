@@ -1044,6 +1044,20 @@ input.menu-checkbox + label::before{
 
 }
 
+@media screen and (min-width: 1680px) {
+
+  .item2 img {
+  left:25%;
+ }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1240px) {
+  .item2 img {
+    width:90%;
+    margin-top: 7%;
+  }
+}
 
 @media only screen and (max-width: 1241px) {
 
@@ -1138,7 +1152,7 @@ input.menu-checkbox + label::before{
   }
   .image {
     top: 700px;
-    right: 420px;
+    right: 37%;
     transform: translateX(400%);
   }
 

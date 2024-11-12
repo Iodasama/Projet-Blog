@@ -27,7 +27,7 @@ class SecurityController extends AbstractController
             //           $user= $entityManager->getRepository(User::class)->findOneBy(['id'=>$currentUser->getId()]);
             //           dd($user); soit cette methode soit celle du getId ci dessous
             //           $id= $currentUser->getId();
-            return $this->redirectToRoute('home_page');
+            return $this->redirectToRoute('app_login');
 
             //           return $this->redirectToRoute('users_insert_review',['id'=>$id]);
             //           si on souhaite mettre un id mais faille dans la sécurité du coup n importe quel user une fois connecté

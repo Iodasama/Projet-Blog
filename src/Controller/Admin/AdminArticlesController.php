@@ -24,7 +24,7 @@ class AdminArticlesController extends AbstractController
     public function welcoming (): Response
     {
         return new Response(
-            '<html><body>你们好！欢迎你们来看看雷杰的博客！！</body></html>'
+            '<html ><body>你们好！欢迎你们来看看雷杰的博客！！</body></html>'
 
         );
     }

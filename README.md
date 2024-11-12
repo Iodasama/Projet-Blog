@@ -52,6 +52,7 @@ chown -R www-data:www-data var/cache var/log
 chmod -R 775 var/cache var/log
 
 Ces commandes assurent que le serveur web peut accéder, lire et écrire dans ces répertoires. Cela est crucial pour le bon fonctionnement de l'application Symfony en production.
+
 6. Configuration de la Base de Données : 
    Etape initiale :Comme le projet utilise les migrations Doctrine pour gérer les modifications de la structure de la base de données, il est important d'appliquer ces migrations avant d'importer les données en production.Nous pouvons  utiliser la commande suivante pour appliquer les migrations à la base de données de production :
    php bin/console doctrine:migrations:migrate --no-interaction --env=prod
